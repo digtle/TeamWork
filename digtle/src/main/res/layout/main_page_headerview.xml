@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<android.support.v4.view.ViewPager
+    android:id="@+id/first_banner"
+    android:layout_width="match_parent"
+    android:background="#00ff00"
+    android:layout_height="100dp">
+</android.support.v4.view.ViewPager>
+    <LinearLayout
+        android:id="@+id/main_page_selector_ll"
+        android:orientation="horizontal"
+        android:layout_alignBottom="@+id/first_banner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/cicle_selector"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/cicle_selector"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/cicle_selector"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/cicle_selector"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/cicle_selector"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/first_banner_title"
+        android:layout_below="@id/first_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textColor="#575757"
+        android:text="深夜俱乐部 | 你对像 Moto Z 这样的模块化手机感兴趣吗？"
+        />
+</RelativeLayout>

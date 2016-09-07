@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/title_rl"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <ImageView
+            android:id="@+id/header_view_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_menu_black_48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="数字尾巴"
+            android:layout_toRightOf="@id/header_view_iv"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"/>
+        <ImageButton
+            android:id="@+id/search_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_search_black_48dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+        <ImageButton
+            android:id="@+id/message_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_notifications_black_48dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/search_iv"
+            android:layout_marginRight="20dp"/>
+    </RelativeLayout>
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/find_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
