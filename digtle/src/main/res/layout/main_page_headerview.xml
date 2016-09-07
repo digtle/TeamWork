@@ -4,41 +4,50 @@
 <android.support.v4.view.ViewPager
     android:id="@+id/first_banner"
     android:layout_width="match_parent"
-    android:background="#00ff00"
-    android:layout_height="100dp">
+    android:layout_height="130dp">
 </android.support.v4.view.ViewPager>
     <LinearLayout
         android:id="@+id/main_page_selector_ll"
         android:orientation="horizontal"
         android:layout_alignBottom="@+id/first_banner"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@drawable/cicle_selector"/>
+            android:layout_height="5dp"
+            android:adjustViewBounds="true"
+            android:minWidth="3dp"
+            android:src="@drawable/cicle_selector"/>
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/cicle_selector"/>
+            android:layout_height="5dp"
+            android:adjustViewBounds="true"
+            android:minWidth="3dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/cicle_selector"/>
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/cicle_selector"/>
+            android:layout_height="5dp"
+            android:layout_marginLeft="5dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/cicle_selector"/>
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/cicle_selector"/>
+            android:layout_height="5dp"
+            android:layout_marginLeft="5dp"
+            android:adjustViewBounds="true"
+            android:saveEnabled="true"
+            android:minWidth="3dp"
+            android:src="@drawable/cicle_selector"/>
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/cicle_selector"/>
+            android:layout_height="5dp"
+            android:layout_marginLeft="5dp"
+            android:adjustViewBounds="true"
+            android:minWidth="3dp"
+            android:src="@drawable/cicle_selector"/>
     </LinearLayout>
     <TextView
         android:id="@+id/first_banner_title"

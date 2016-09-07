@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:drawable="@drawable/cicle_shape_unselect" />
-    <item android:drawable="@drawable/circle_shape_selected" android:state_enabled="true" />
-</selector>
+
+    <item android:state_enabled="true" android:drawable="@drawable/guide_dot_blue"  />
+    <item android:state_enabled="false" android:drawable="@drawable/guide_dot_gray"  />
+    </selector>

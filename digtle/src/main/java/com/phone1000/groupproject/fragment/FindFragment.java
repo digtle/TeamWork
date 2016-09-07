@@ -13,6 +13,8 @@ import com.phone1000.groupproject.R;
  * Created by Administrator on 2016/9/6.
  */
 public class FindFragment extends Fragment {
+
+    private View view;
     //重写抽象工厂方法
     public static FindFragment newInstance(){
         FindFragment findFragment = new FindFragment();
@@ -22,7 +24,9 @@ public class FindFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.find_fragment, container, false);
+         view = inflater.inflate(R.layout.find_fragment, container, false);
         return view;
     }
+
+
 }

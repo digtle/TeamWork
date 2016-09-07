@@ -1,11 +1,11 @@
 package com.phone1000.groupproject.ui;
 
 import android.content.Context;
-import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -42,21 +42,27 @@ public class FindBanner implements IjsonView{
     TextView titleTv;
     private  static   JsonHttpUtils jsonHttpUtils ;
     private List<FirstBannerInfo> bannerList = new ArrayList<>();
-    private View view ;
     private Context mContext;
     private BannerAdapter adapter;
     private int pagePosition;
-
-    public FindBanner(View view, Context mContext) {
-        this.view = view;
+    private int index;
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            index++;
+            bannerViewPage.setCurrentItem(index%5);
+            sendEmptyMessageDelayed(0,3000);
+        }
+    };
+    public FindBanner( Context mContext) {
         this.mContext = mContext;
     }
 
-    public View getHeaderView (){
-        view = LayoutInflater.from(mContext).inflate(R.layout.main_page_headerview,null,false);
-        ButterKnife.bind(this,view);
-        adapter = new BannerAdapter();
-        bannerViewPage.setAdapter(adapter);
+    public View getHeaderView (View headerview){
+        headerview = LayoutInflater.from(mContext).inflate(R.layout.main_page_headerview,null,false);
+        ButterKnife.bind(this,headerview);
+        mHandler.sendEmptyMessage(0);
         //获取viewpager的item
         bannerViewPage.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -74,6 +80,9 @@ public class FindBanner implements IjsonView{
                 }
                 ImageView imageView1 = (ImageView) selectorll.getChildAt(position);
                 imageView1.setEnabled(true);
+                String title = bannerList.get(4-position).getTitle();
+                titleTv.setText(title);
+
             }
 
             @Override
@@ -81,22 +90,11 @@ public class FindBanner implements IjsonView{
 
             }
         });
-        //设置viewpager的点击跳转事件
-        bannerViewPage.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                //将点击时的item的id传递给另外一个activity
-                String aid = bannerList.get(4-pagePosition).getId();
-                if(aid != null){
-                    Intent intent = new Intent();
-                }
-                return true;
-            }
-        });
+
         //请求网络数据，获取json数据
         jsonHttpUtils = JsonHttpUtils.newInstance();
         jsonHttpUtils.load(DigtleUrl.MAIN_PAGE_BANNER_URL,null,this);
-        return view;
+        return headerview;
     }
 
 
@@ -121,6 +119,8 @@ public class FindBanner implements IjsonView{
                 id = jsonObject.getString("id");
                 bannerList.add(new FirstBannerInfo(id,title,imageurl));
             }
+            adapter = new BannerAdapter();
+            bannerViewPage.setAdapter(adapter);
             adapter.notifyDataSetChanged();
 
         } catch (JSONException e) {
@@ -132,6 +132,7 @@ public class FindBanner implements IjsonView{
 
         @Override
         public int getCount() {
+
             return bannerList == null ? 0:bannerList.size();
         }
 
@@ -144,17 +145,16 @@ public class FindBanner implements IjsonView{
         public Object instantiateItem(ViewGroup container, int position) {
             //设置viewpager中的图片,title
             ImageView imageView = new ImageView(mContext);
-            String title = bannerList.get(4-position).getTitle();
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             String imageurl = bannerList.get(4-position).getPic_url();
             Picasso.with(mContext).load(imageurl).into(imageView);
-            titleTv.setText(title);
             container.addView(imageView);
             return imageView;
         }
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
-            super.destroyItem(container, position, object);
+
         }
     }
 }
