@@ -17,36 +17,27 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="5dp"
-            android:adjustViewBounds="true"
-            android:minWidth="3dp"
-            android:src="@drawable/cicle_selector"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="5dp"
-            android:adjustViewBounds="true"
-            android:minWidth="3dp"
-            android:layout_marginLeft="5dp"
             android:src="@drawable/cicle_selector"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="5dp"
             android:layout_marginLeft="5dp"
-            android:adjustViewBounds="true"
             android:src="@drawable/cicle_selector"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="5dp"
             android:layout_marginLeft="5dp"
-            android:adjustViewBounds="true"
+            android:src="@drawable/cicle_selector"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_marginLeft="5dp"
             android:saveEnabled="true"
-            android:minWidth="3dp"
             android:src="@drawable/cicle_selector"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="5dp"
             android:layout_marginLeft="5dp"
-            android:adjustViewBounds="true"
-            android:minWidth="3dp"
             android:src="@drawable/cicle_selector"/>
     </LinearLayout>
     <TextView

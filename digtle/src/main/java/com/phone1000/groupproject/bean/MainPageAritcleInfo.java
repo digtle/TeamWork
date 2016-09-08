@@ -8,17 +8,33 @@ public class MainPageAritcleInfo {
     private String title;
     private String authorid;
     private String aid;
+    private String commentnum;
+    private Long dataLine;
+    private String summary;
+    private String pic_url;
 
-    public MainPageAritcleInfo(String recomandnum, String title, String aid, String authorid, String commentnum, Long dataLine, String summary, String pic_url) {
+    public MainPageAritcleInfo(String recomandnum, String title, String aid,String authorid,  String commentnum,  Long dataLine, String summary,String pic_url, String author) {
         this.recomandnum = recomandnum;
         this.title = title;
-        this.aid = aid;
         this.authorid = authorid;
+        this.aid = aid;
         this.commentnum = commentnum;
-        this.dataLine = dataLine;
         this.summary = summary;
+        this.dataLine = dataLine;
         this.pic_url = pic_url;
+        this.author = author;
     }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    private String author;
+
 
     public String getRecomandnum() {
         return recomandnum;
@@ -84,9 +100,6 @@ public class MainPageAritcleInfo {
         this.pic_url = pic_url;
     }
 
-    private String commentnum;
-    private Long dataLine;
-    private String summary;
-    private String pic_url;
+
 
 }

@@ -2,6 +2,8 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp">
@@ -10,6 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <LinearLayout
+            android:id="@+id/item_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -39,7 +42,7 @@
                     android:src="@drawable/category_camera_small"
                     android:layout_alignLeft="@id/user_name_tv"
                     android:layout_below="@id/user_name_tv"
-                    android:layout_marginTop="10dp"/>
+                   />
                 <TextView
                     android:id="@+id/type_name_tv"
                     android:layout_width="wrap_content"
@@ -55,31 +58,35 @@
 
             </RelativeLayout>
             <TextView
+                android:id="@+id/time_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2天前"
                 android:textSize="10sp"
-
                 android:layout_gravity="center_vertical"/>
         </LinearLayout>
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/pic_image"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="130dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/article_default"
-                android:layout_below="@id/avatar_image"/>
-        </LinearLayout>
+            />
+        </RelativeLayout>
         <TextView
+            android:id="@+id/article_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:textColor="#000000"
             android:text="草原秋色，八月坝上草原风光"
             android:textSize="15sp"/>
         <TextView
+            android:id="@+id/article_summay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -104,6 +111,7 @@
                 android:layout_height="10dp"
                 android:src="@drawable/ic_comment_black_24dp"
                 android:layout_alignBottom="@id/comment"
+                android:scaleType="fitXY"
                 android:layout_toLeftOf="@id/comment"
                 android:layout_marginRight="5dp"/>
             <TextView
