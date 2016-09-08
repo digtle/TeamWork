@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.phone1000.groupproject.R;
+import com.phone1000.groupproject.bean.DigtleUrl;
 import com.phone1000.groupproject.bean.MainPageAritcleInfo;
 import com.phone1000.groupproject.http.JsonHttpUtils;
 import com.phone1000.groupproject.ui.FindBanner;
@@ -72,8 +73,8 @@ public class HomepageFragment extends Fragment implements IjsonView{
         adapter = new ListAdapter();
         pulllistView.setAdapter(adapter);
         //开启网络获取json数据
-//        jsonHttpUtils = JsonHttpUtils.newInstance();
-//        jsonHttpUtils.load(DigtleUrl.MAIN_PAGE_ARTICLE_URL,null,this);
+        jsonHttpUtils = JsonHttpUtils.newInstance();
+        jsonHttpUtils.load(DigtleUrl.MAIN_PAGE_ARTICLE_URL,null,this);
 
     }
 
