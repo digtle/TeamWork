@@ -37,9 +37,9 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2016/9/7.
  */
 public class TeamFragmentLeft extends Fragment implements IsecondBannerView,ImostnewlistView{
-    private Context mContext;
  @BindView(R.id.left_prlv)
     ListView newsList;
+    private Context mContext;
 private View headerView;
     private ViewPager leftFragmentBanner;
     private TextView titleTv;
@@ -145,12 +145,12 @@ private View headerView;
 
         @Override
         public int getCount() {
-            return bannerList == null ? 0:null;
+            return bannerList == null ? 0:bannerList.size();
         }
 
         @Override
         public boolean isViewFromObject(View view, Object object) {
-            return false;
+            return view==object;
         }
 
         @Override
