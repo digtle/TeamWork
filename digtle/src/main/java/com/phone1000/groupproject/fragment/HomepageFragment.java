@@ -2,8 +2,11 @@ package com.phone1000.groupproject.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.phone1000.groupproject.R;
 import com.phone1000.groupproject.bean.DigtleUrl;
 import com.phone1000.groupproject.bean.MainPageAritcleInfo;
@@ -45,12 +47,20 @@ public class HomepageFragment extends Fragment implements IjsonView{
     private  ListAdapter adapter;
     private JsonHttpUtils jsonHttpUtils;
     @BindView(R.id.homepage_list_view)
-    PullToRefreshListView pulllistView;
+    ListView pulllistView;
+    @BindView(R.id.swap_layout)
+    SwipeRefreshLayout swapLayout;
     public static HomepageFragment newInstance(){
         HomepageFragment homepageFragment = new HomepageFragment();
         return homepageFragment;
     }
-
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            swapLayout.setRefreshing(false);
+        }
+    };
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,10 +78,27 @@ public class HomepageFragment extends Fragment implements IjsonView{
     }
 
     private void initView() {
-        ListView listview = pulllistView.getRefreshableView();
-        listview.addHeaderView(headerView);
+
+       pulllistView.addHeaderView(headerView);
+        pulllistView.setPadding(20,0,20,0);
         adapter = new ListAdapter();
         pulllistView.setAdapter(adapter);
+        //设置下拉刷新的事件
+            swapLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                 swapLayout.postDelayed(new Runnable() {
+                     @Override
+                     public void run() {
+                         jsonHttpUtils.load(DigtleUrl.MAIN_PAGE_ARTICLE_URL,null,HomepageFragment.this);
+                     }
+                 }, 3000);
+
+
+                }
+            });
+
+
         //开启网络获取json数据
         jsonHttpUtils = JsonHttpUtils.newInstance();
         jsonHttpUtils.load(DigtleUrl.MAIN_PAGE_ARTICLE_URL,null,this);
@@ -87,6 +114,7 @@ public class HomepageFragment extends Fragment implements IjsonView{
 
     @Override
     public void getJsonString(String jsonString) {
+        //解析listview数据
         try {
             JSONObject jsonObject = new JSONObject(jsonString);
             JSONObject returnData = jsonObject.getJSONObject("returnData");
@@ -108,6 +136,7 @@ public class HomepageFragment extends Fragment implements IjsonView{
                 articleList.add(new MainPageAritcleInfo(recommend_add,title,aid,authorid,commentnum,dateline,summary,pic_url,author));
             }
             adapter.notifyDataSetChanged();
+            mHandler.sendEmptyMessage(0);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -152,12 +181,14 @@ public class HomepageFragment extends Fragment implements IjsonView{
             viewHolder.likeTv.setText(aritcleInfo.getRecomandnum());
             viewHolder.commentTv.setText(aritcleInfo.getCommentnum());
             String imageUrl = aritcleInfo.getPic_url();
+            String authorid = aritcleInfo.getAuthorid();
+            String userLogo = DigtleUrl.getUserLogoUrl(authorid);
             Picasso.with(mContext).load(imageUrl).into(viewHolder.picImage);
-
+            Picasso.with(mContext).load(userLogo).into(viewHolder.userLogoIv);
             return view;
         }
         class ViewHolder{
-            @BindView(R.id.avatar_image)
+            @BindView(R.id.home_avatar_image)
             CircleImageView userLogoIv;
             @BindView(R.id.user_name_tv)
             TextView authorNameTv;
