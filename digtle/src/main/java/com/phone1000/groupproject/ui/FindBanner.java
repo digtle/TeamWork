@@ -93,7 +93,7 @@ public class FindBanner implements IjsonView{
 
         //请求网络数据，获取json数据
         jsonHttpUtils = JsonHttpUtils.newInstance();
-        jsonHttpUtils.load(DigtleUrl.MAIN_PAGE_BANNER_URL,null,this);
+        jsonHttpUtils.load(DigtleUrl.MAIN_PAGE_BANNER_URL,null,this,JsonHttpUtils.REQUEST_METHOD_GET);
         return headerview;
     }
 

@@ -8,23 +8,33 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import com.phone1000.groupproject.R;
+import com.phone1000.groupproject.adapter.TeamNewListAdapter;
+import com.phone1000.groupproject.bean.DigtleUrl;
+import com.phone1000.groupproject.bean.MostnewListInfo;
+import com.phone1000.groupproject.http.JsonHttpUtils;
+import com.phone1000.groupproject.view.IjsonView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 /**
  * Created by Administrator on 2016/9/7.
  */
-public class TeamFragmentRight extends Fragment {
+public class TeamFragmentRight extends Fragment implements IjsonView {
     private Context mContext;
     private View view;
     private List<String> datas = new ArrayList<>();
-
+    private JsonHttpUtils jsonHttpUtils;
+    private TeamNewListAdapter adapter;
+    private List<MostnewListInfo>  beanList = new ArrayList<>();
     //重写抽象工厂方法
     public static TeamFragmentRight newInstance(){
         TeamFragmentRight teamFragmentRight = new TeamFragmentRight();
@@ -41,23 +51,21 @@ public class TeamFragmentRight extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.team_ftagment_right, container, false);
-//        loadDatas();
+        loadDatas();
         initView();
         return view;
     }
 
     private void loadDatas() {
-        // 模拟一些数据
-        for (int i = 0; i < 20; i++) {
-            datas.add("item - " + i);
-        }
+      jsonHttpUtils = JsonHttpUtils.newInstance();
+        jsonHttpUtils.load(DigtleUrl.FIND_WELL_CHOSEN,null,this,JsonHttpUtils.REQUEST_METHOD_GET);
     }
 
     private void initView() {
         final SwipeRefreshLayout myRefreshListView = (SwipeRefreshLayout) view.findViewById(R.id.swipe_layout);
         ListView mListView = (ListView) view.findViewById(R.id.list_view);
-        MyAdapter myAdapter = new MyAdapter();
-        mListView.setAdapter(myAdapter);
+           adapter = new TeamNewListAdapter(mContext,beanList);
+        mListView.setAdapter(adapter);
         //设置下拉刷新监听器
         myRefreshListView.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -66,43 +74,60 @@ public class TeamFragmentRight extends Fragment {
                     @Override
                     public void run() {
                         //加载数据
-//                        datas.add(new Date().toGMTString());
+                        beanList.clear();
+                        jsonHttpUtils.load(DigtleUrl.FIND_WELL_CHOSEN,null,TeamFragmentRight.this,JsonHttpUtils.REQUEST_METHOD_GET);
                         //刷新适配器
 
                         //更新完后调用该方法结束刷新
                         myRefreshListView.setRefreshing(false);
                     }
-                },1500);
+                },2000);
             }
         });
         //设置加载监听器
 //        myRefreshListView.
     }
 
-    class MyAdapter extends BaseAdapter{
+    @Override
+    public void getJsonString(String jsonString) {
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject(jsonString);
+            JSONArray jsonArray = jsonObject.getJSONArray("newlist");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                MostnewListInfo mostnewListInfo = new MostnewListInfo();
+                JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                int attchcount = jsonObject1.getInt("attachcount");
+                List<String> attachList = new ArrayList<>();
+                if (attchcount != 0) {
+                    JSONObject imageList = jsonObject1.getJSONObject("attachlist");
+                    Iterator<String> keys = imageList.keys();
+                    while (keys.hasNext()) {
+                        String key = keys.next();
+                        String imageUrl = imageList.getString(key);
+                        attachList.add(imageUrl);
+                    }
+                }
 
-        @Override
-        public int getCount() {
-            return 10;
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            View view = convertView;
-            if (view == null){
-                view =LayoutInflater.from(mContext).inflate(R.layout.team_fragment_item,parent,false);
+                mostnewListInfo.setAttachList(attachList);
+                mostnewListInfo.setAttachcount(attchcount);
+                mostnewListInfo.setAuthor(jsonObject1.getString("author"));
+                mostnewListInfo.setAuthorid(jsonObject1.getString("authorid"));
+                mostnewListInfo.setDateline(jsonObject1.getString("dateline"));
+                mostnewListInfo.setForum_icon(jsonObject1.getString("forum_icon"));
+                mostnewListInfo.setPostcommentcount(jsonObject1.getString("postcommentcount"));
+                mostnewListInfo.setForum_name(jsonObject1.getString("forum_name"));
+                mostnewListInfo.setReplies(jsonObject1.getString("replies"));
+                mostnewListInfo.setSubject(jsonObject1.getString("subject"));
+                mostnewListInfo.setSummary(jsonObject1.getString("summary"));
+                mostnewListInfo.setRecommend_add(jsonObject1.getString("recommend_add"));
+                beanList.add(mostnewListInfo);
             }
-            return view;
+
+            adapter.notifyDataSetChanged();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+
     }
 }

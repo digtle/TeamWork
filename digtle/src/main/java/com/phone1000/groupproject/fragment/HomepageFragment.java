@@ -90,7 +90,7 @@ public class HomepageFragment extends Fragment implements IjsonView{
                  swapLayout.postDelayed(new Runnable() {
                      @Override
                      public void run() {
-                         jsonHttpUtils.load(DigtleUrl.MAIN_PAGE_ARTICLE_URL,null,HomepageFragment.this);
+                         jsonHttpUtils.load(DigtleUrl.MAIN_PAGE_ARTICLE_URL,null,HomepageFragment.this,JsonHttpUtils.REQUEST_METHOD_GET);
                      }
                  }, 3000);
 
@@ -101,7 +101,7 @@ public class HomepageFragment extends Fragment implements IjsonView{
 
         //开启网络获取json数据
         jsonHttpUtils = JsonHttpUtils.newInstance();
-        jsonHttpUtils.load(DigtleUrl.MAIN_PAGE_ARTICLE_URL,null,this);
+        jsonHttpUtils.load(DigtleUrl.MAIN_PAGE_ARTICLE_URL,null,this,JsonHttpUtils.REQUEST_METHOD_GET);
 
     }
 
@@ -183,8 +183,8 @@ public class HomepageFragment extends Fragment implements IjsonView{
             String imageUrl = aritcleInfo.getPic_url();
             String authorid = aritcleInfo.getAuthorid();
             String userLogo = DigtleUrl.getUserLogoUrl(authorid);
-            Picasso.with(mContext).load(imageUrl).into(viewHolder.picImage);
-            Picasso.with(mContext).load(userLogo).into(viewHolder.userLogoIv);
+            Picasso.with(mContext).load(imageUrl).placeholder(R.drawable.article_default).into(viewHolder.picImage);
+            Picasso.with(mContext).load(userLogo).placeholder(R.drawable.avatar_middle).into(viewHolder.userLogoIv);
             return view;
         }
         class ViewHolder{
