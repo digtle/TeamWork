@@ -111,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent" />
         </RelativeLayout>
-        <ScrollView
+        <RelativeLayout
             android:id="@+id/webview_detail_ll"
             android:layout_below="@+id/detail_detail_rl"
             android:layout_width="match_parent"
@@ -119,24 +119,21 @@
         <WebView
             android:id="@+id/detail_web"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            />
-           </ScrollView>
+            android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/dividline1"
+                android:layout_below="@id/detail_web"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="#23000000"
+                />
            <RelativeLayout
                android:id="@+id/author_info_rl"
-               android:layout_below="@id/webview_detail_ll"
+               android:layout_below="@id/dividline1"
                android:layout_width="match_parent"
                android:layout_height="120dp">
                <TextView
-                   android:id="@+id/dividline1"
-                   android:layout_width="match_parent"
-                   android:layout_height="20dp"
-                   android:background="#23000000"
-                   />
-               <TextView
                    android:id="@+id/writer_dividline"
-                   android:layout_below="@id/dividline1"
                    android:layout_width="5dp"
                    android:layout_height="match_parent"
                    android:background="#3991FC"
@@ -194,6 +191,7 @@
                 android:layout_height="20dp"
                 android:background="#23000000"
                 />
+        </RelativeLayout>
     </RelativeLayout>
 
 </RelativeLayout>

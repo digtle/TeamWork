@@ -116,8 +116,6 @@ public class LeftBannerInfo {
          * avatar_big :
          * posts : 0
          * todayposts : 0
-         * lastpost : false
-         * dateline : false
          * replies : 0
          * views : 0
          * heats : 0
@@ -294,8 +292,6 @@ public class LeftBannerInfo {
             private String avatar_big;
             private int posts;
             private int todayposts;
-            private boolean lastpost;
-            private boolean dateline;
             private int replies;
             private int views;
             private int heats;
@@ -367,21 +363,6 @@ public class LeftBannerInfo {
                 this.todayposts = todayposts;
             }
 
-            public boolean isLastpost() {
-                return lastpost;
-            }
-
-            public void setLastpost(boolean lastpost) {
-                this.lastpost = lastpost;
-            }
-
-            public boolean isDateline() {
-                return dateline;
-            }
-
-            public void setDateline(boolean dateline) {
-                this.dateline = dateline;
-            }
 
             public int getReplies() {
                 return replies;
@@ -432,4 +413,5 @@ public class LeftBannerInfo {
             }
         }
     }
+
 }

@@ -11,6 +11,5 @@ public interface IdigtleModel {
     void getSecondBanner(IsecondBannerPre.Callback callback);
     //获取最新的listview的数据
     void getMostNewList(int page,int perpage,ImostnewListPre.Callback callback);
-   //获取最新的头部的viewpager的数据
-    void getFindBanner();
+
 }

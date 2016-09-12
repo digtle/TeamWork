@@ -2,7 +2,6 @@ package com.phone1000.groupproject.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -14,7 +13,7 @@ import butterknife.ButterKnife;
 public class MainPageDetailActivity extends AppCompatActivity {
     @BindView(R.id.detail_web)
     WebView webView;
-    private final  String BASE_URL ="http://www.dgtle.com/article-15777-1.html";
+    private final  String BASE_URL ="http://www.baidu.com";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +24,6 @@ public class MainPageDetailActivity extends AppCompatActivity {
 
     private void initView() {
         webView.loadUrl(BASE_URL);
-        WebSettings settings = webView.getSettings();
-        settings.setUseWideViewPort(true);
-        settings.setLoadWithOverviewMode(true);
         webView.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
