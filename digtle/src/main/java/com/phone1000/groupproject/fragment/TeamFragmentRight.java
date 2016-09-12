@@ -124,6 +124,7 @@ public class TeamFragmentRight extends Fragment implements IjsonView {
                 beanList.add(mostnewListInfo);
             }
 
+
             adapter.notifyDataSetChanged();
         } catch (JSONException e) {
             e.printStackTrace();
