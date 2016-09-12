@@ -1,6 +1,7 @@
 package com.phone1000.groupproject.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -10,6 +11,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -20,6 +22,7 @@ import com.phone1000.groupproject.bean.DigtleUrl;
 import com.phone1000.groupproject.bean.MainPageAritcleInfo;
 import com.phone1000.groupproject.http.JsonHttpUtils;
 import com.phone1000.groupproject.ui.FindBanner;
+import com.phone1000.groupproject.ui.MainPageDetailActivity;
 import com.phone1000.groupproject.view.IjsonView;
 import com.squareup.picasso.Picasso;
 
@@ -97,7 +100,13 @@ public class HomepageFragment extends Fragment implements IjsonView{
 
                 }
             });
-
+      pulllistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+          @Override
+          public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+              Intent intent = new Intent(mContext, MainPageDetailActivity.class);
+              startActivity(intent);
+          }
+      });
 
         //开启网络获取json数据
         jsonHttpUtils = JsonHttpUtils.newInstance();

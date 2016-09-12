@@ -53,7 +53,7 @@ public class GridAdapter extends BaseAdapter {
         else{
             viewHolder = (ViewHolder) view.getTag();
         }
-        Picasso.with(mContext).load(imageList.get(position)).placeholder(R.drawable.article_default).into(viewHolder.iamgeView);
+        Picasso.with(mContext).load(imageList.get(position)).resize(dp2pix(100),dp2pix(100)).centerCrop().placeholder(R.drawable.article_default).into(viewHolder.iamgeView);
 
         return view;
     }
@@ -65,4 +65,9 @@ public class GridAdapter extends BaseAdapter {
             ButterKnife.bind(this,view);
         }
     }
+private int dp2pix(int size){
+    float scale = mContext.getResources().getDisplayMetrics().density;
+    return  (int)(size*scale+0.5f);
+}
+
 }

@@ -1,1 +1,1 @@
-include ':app', ':digtle', ':refreshlibrary'
+include ':app', ':digtle', ':refreshlibrary', ':imageloader'

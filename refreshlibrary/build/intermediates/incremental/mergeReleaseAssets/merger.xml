@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\Users\Team\refreshlibrary\src\main\assets"/><source path="E:\Users\Team\refreshlibrary\build\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="E:\Users\Team\refreshlibrary\src\release\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="G:\AndroidProject\digtle\refreshlibrary\src\main\assets"/><source path="G:\AndroidProject\digtle\refreshlibrary\build\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="G:\AndroidProject\digtle\refreshlibrary\src\release\assets"/></dataSet></merger>
