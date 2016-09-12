@@ -1,0 +1,33 @@
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 0
+# 151 ciObject found
+ciMethod java/lang/Object <init> ()V 4097 1 23817 0 0
+ciMethod java/lang/Comparable compareTo (Ljava/lang/Object;)I 0 0 1 0 -1
+ciMethod java/lang/String length ()I 4097 1 35837 0 64
+ciMethod java/lang/String charAt (I)C 4097 1 132737 0 128
+ciMethod java/lang/String compareTo (Ljava/lang/String;)I 961 49153 5540 0 -1
+ciMethod java/lang/String compareTo (Ljava/lang/Object;)I 2169 1 5965 0 288
+ciMethod java/util/Comparator compare (Ljava/lang/Object;Ljava/lang/Object;)I 0 0 1 0 -1
+ciMethod java/util/TreeMap put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; 3929 24577 3563 0 -1
+ciMethod java/util/TreeMap compare (Ljava/lang/Object;Ljava/lang/Object;)I 49 1 6 0 0
+ciMethod java/util/TreeMap colorOf (Ljava/util/TreeMap$Entry;)Z 4097 1 5182 0 0
+ciMethod java/util/TreeMap parentOf (Ljava/util/TreeMap$Entry;)Ljava/util/TreeMap$Entry; 4097 1 19849 0 64
+ciMethod java/util/TreeMap setColor (Ljava/util/TreeMap$Entry;Z)V 4097 1 6952 0 0
+ciMethod java/util/TreeMap leftOf (Ljava/util/TreeMap$Entry;)Ljava/util/TreeMap$Entry; 4097 1 4601 0 0
+ciMethod java/util/TreeMap rightOf (Ljava/util/TreeMap$Entry;)Ljava/util/TreeMap$Entry; 4097 1 3016 0 0
+ciMethod java/util/TreeMap rotateLeft (Ljava/util/TreeMap$Entry;)V 3545 1 1200 0 0
+ciMethod java/util/TreeMap rotateRight (Ljava/util/TreeMap$Entry;)V 2465 1 803 0 0
+ciMethod java/util/TreeMap fixAfterInsertion (Ljava/util/TreeMap$Entry;)V 4097 4817 3567 0 0
+ciMethod sun/misc/ASCIICaseInsensitiveComparator compare (Ljava/lang/String;Ljava/lang/String;)I 4097 6513 12897 0 0
+ciMethod sun/misc/ASCIICaseInsensitiveComparator isUpper (I)Z 4097 1 27548 0 64
+ciMethod sun/misc/ASCIICaseInsensitiveComparator toLower (I)I 4097 1 27548 0 64
+ciMethod sun/misc/ASCIICaseInsensitiveComparator compare (Ljava/lang/Object;Ljava/lang/Object;)I 4097 1 12897 0 0
+ciMethod java/util/TreeMap$Entry <init> (Ljava/lang/Object;Ljava/lang/Object;Ljava/util/TreeMap$Entry;)V 4097 1 3572 0 0
+ciMethod java/util/TreeMap$Entry setValue (Ljava/lang/Object;)Ljava/lang/Object; 0 0 1 0 -1
+ciMethodData java/lang/String charAt (I)C 2 132737 orig 264 8 177 8 97 0 0 0 0 104 61 216 20 0 0 0 0 120 1 0 0 32 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 9 36 16 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 80 0 0 0 255 255 255 255 7 0 1 0 0 0 0 0 data 10 0x10007 0x0 0x40 0x20481 0xa0007 0x20481 0x30 0x0 0x120002 0x0 oops 0
+ciMethodData java/lang/String length ()I 2 35861 orig 264 8 177 8 97 0 0 0 0 24 60 216 20 0 0 0 0 32 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 169 80 4 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 255 255 255 0 0 0 0 0 0 0 0 data 0 oops 0
+ciMethodData sun/misc/ASCIICaseInsensitiveComparator toLower (I)I 2 27548 orig 264 8 177 8 97 0 0 0 0 192 246 234 20 0 0 0 0 144 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 225 76 3 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 72 0 0 0 255 255 255 255 2 0 1 0 0 0 0 0 data 9 0x10002 0x699c 0x40007 0x532e 0x38 0x166e 0xb0003 0x166e 0x18 oops 0
+ciMethodData sun/misc/ASCIICaseInsensitiveComparator isUpper (I)Z 2 27548 orig 264 8 177 8 97 0 0 0 0 32 246 234 20 0 0 0 0 88 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 225 76 3 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 56 0 0 0 255 255 255 255 7 0 9 0 0 0 0 0 data 7 0x90007 0x532e 0x38 0x166e 0xd0003 0x166e 0x18 oops 0
+ciMethodData java/util/TreeMap parentOf (Ljava/util/TreeMap$Entry;)Ljava/util/TreeMap$Entry; 2 19849 orig 264 8 177 8 97 0 0 0 0 192 202 234 20 0 0 0 0 88 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 73 92 2 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 56 0 0 0 255 255 255 255 7 0 1 0 0 0 0 0 data 7 0x10007 0x4b89 0x38 0x0 0x50003 0x0 0x18 oops 0
+ciMethodData sun/misc/ASCIICaseInsensitiveComparator compare (Ljava/lang/Object;Ljava/lang/Object;)I 2 12897 orig 264 8 177 8 97 0 0 0 0 0 248 234 20 0 0 0 0 232 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 9 131 1 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 144 0 0 0 255 255 255 255 4 0 2 0 0 0 0 0 data 18 0x20004 0x0 0x3029080 0x3061 0x0 0x0 0x60004 0x0 0x3029080 0x3061 0x0 0x0 0x90005 0x0 0x16e80c70 0x3061 0x0 0x0 oops 3

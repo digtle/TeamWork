@@ -16,4 +16,6 @@ public interface HttpUtil {
     @GET("/api/dgtle_api/v1/api.php?REQUESTCODE=46&apikeys=DGTLECOM_APITEST1")
     Observable<MostnewListInfo>  queryMostNewList(@Query("page") int page,@Query("perpage") int perPage);
     //获取发现页面的头部的viewpager
+    @GET("/api/dgtle_api/v1/api.php?REQUESTCODE=50&apikeys=DGTLECOM_APITEST1&bid=415")
+    Observable<LeftBannerInfo>  queryFindBanner();
 }
