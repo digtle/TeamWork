@@ -77,6 +77,8 @@
                 android:id="@+id/pic_image"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
+                android:adjustViewBounds="true"
+                android:minHeight="120dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/article_default"
             />
@@ -89,7 +91,7 @@
             android:layout_marginTop="10dp"
             android:textColor="#000000"
             android:text="草原秋色，八月坝上草原风光"
-            android:textSize="18sp"/>
+            android:textSize="16sp"/>
         <TextView
             android:id="@+id/article_summay"
             android:layout_width="wrap_content"
@@ -98,7 +100,7 @@
             android:layout_marginTop="10dp"
             android:text="八月未来到承德塞罕坝坝上草原，由于工作繁忙，只选择了几个坝上的景点随意拍了点照片，八月底坝上的温度还不算低，坝上草原刚刚有..."
             android:maxLines="2"
-            android:textSize="14sp"/>
+            android:textSize="10sp"/>
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -108,34 +110,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="45"
-                android:textSize="14sp"
+                android:textSize="11sp"
                 android:layout_marginRight="10dp"
                 android:layout_alignParentRight="true" />
             <ImageView
                 android:id="@+id/comment_iv"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
                 android:src="@drawable/ic_comment_black_24dp"
+                android:layout_alignBottom="@id/comment"
                 android:layout_alignTop="@id/comment"
                 android:layout_toLeftOf="@id/comment"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="5dp"/>
             <TextView
                 android:id="@+id/like"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="49"
-                android:textSize="14sp"
-                android:layout_alignTop="@id/comment"
+                android:textSize="11sp"
+                android:layout_alignBaseline="@id/comment"
                 android:layout_toLeftOf="@id/comment_iv"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="15dp"/>
             <ImageView
                 android:id="@+id/like_iv"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="12dp"
+                android:layout_height="14dp"
                 android:src="@drawable/ic_thumb_up_black_24dp"
-                android:layout_alignTop="@id/comment"
+                android:layout_alignBottom="@id/comment_iv"
                 android:layout_toLeftOf="@id/like"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="5dp"/>
         </RelativeLayout>
 
     </LinearLayout>

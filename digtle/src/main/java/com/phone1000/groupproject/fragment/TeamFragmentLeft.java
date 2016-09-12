@@ -37,10 +37,10 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2016/9/7.
  */
 public class TeamFragmentLeft extends Fragment implements IsecondBannerView,ImostnewlistView{
-    private Context mContext;
  @BindView(R.id.left_prlv)
     ListView newsList;
-    private View headerView;
+    private Context mContext;
+private View headerView;
     private ViewPager leftFragmentBanner;
     private TextView titleTv;
     private Button joinGroupBtn;
@@ -150,7 +150,7 @@ public class TeamFragmentLeft extends Fragment implements IsecondBannerView,Imos
 
         @Override
         public boolean isViewFromObject(View view, Object object) {
-            return view == object;
+            return view==object;
         }
 
         @Override
@@ -170,4 +170,6 @@ public class TeamFragmentLeft extends Fragment implements IsecondBannerView,Imos
             super.destroyItem(container, position, object);
         }
     }
+
+
 }

@@ -48,6 +48,7 @@
         android:gravity="center"
         android:padding="5dp"
         android:textColor="#575757"
+        android:background="#ffffff"
         android:text="深夜俱乐部 | 你对像 Moto Z 这样的模块化手机感兴趣吗？"
         />
 </RelativeLayout>

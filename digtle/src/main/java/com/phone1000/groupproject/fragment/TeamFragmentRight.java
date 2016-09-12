@@ -41,8 +41,16 @@ public class TeamFragmentRight extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.team_ftagment_right, container, false);
+//        loadDatas();
         initView();
         return view;
+    }
+
+    private void loadDatas() {
+        // 模拟一些数据
+        for (int i = 0; i < 20; i++) {
+            datas.add("item - " + i);
+        }
     }
 
     private void initView() {
@@ -68,7 +76,7 @@ public class TeamFragmentRight extends Fragment {
             }
         });
         //设置加载监听器
-//        myRefreshListView.setLoad
+//        myRefreshListView.
     }
 
     class MyAdapter extends BaseAdapter{
