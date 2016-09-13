@@ -19,9 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainPageDetailActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            ></activity>
+        <activity
+            android:name=".ui.MainPageDetailActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".TeamHeadDetailsActivity"></activity>
     </application>
 
 </manifest>
