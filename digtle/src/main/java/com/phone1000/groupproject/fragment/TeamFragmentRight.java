@@ -58,7 +58,7 @@ public class TeamFragmentRight extends Fragment implements IjsonView {
 
     private void loadDatas() {
       jsonHttpUtils = JsonHttpUtils.newInstance();
-        jsonHttpUtils.load(DigtleUrl.FIND_WELL_CHOSEN,null,this,JsonHttpUtils.REQUEST_METHOD_GET);
+        jsonHttpUtils.load(DigtleUrl.GROUP_WELL_CHOSEN,null,this,JsonHttpUtils.REQUEST_METHOD_GET);
     }
 
     private void initView() {
@@ -75,7 +75,7 @@ public class TeamFragmentRight extends Fragment implements IjsonView {
                     public void run() {
                         //加载数据
                         beanList.clear();
-                        jsonHttpUtils.load(DigtleUrl.FIND_WELL_CHOSEN,null,TeamFragmentRight.this,JsonHttpUtils.REQUEST_METHOD_GET);
+                        jsonHttpUtils.load(DigtleUrl.GROUP_WELL_CHOSEN,null,TeamFragmentRight.this,JsonHttpUtils.REQUEST_METHOD_GET);
                         //刷新适配器
 
                         //更新完后调用该方法结束刷新

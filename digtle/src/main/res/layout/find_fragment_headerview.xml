@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <android.support.v4.view.ViewPager
+        android:id="@+id/find_banner"
         android:layout_width="match_parent"
-        android:layout_height="150dp"/>
+        android:layout_height="160dp"/>
     <android.support.v4.view.ViewPager
+        android:id="@+id/find_froup_viewpage"
+        android:layout_below="@id/find_banner"
         android:layout_width="match_parent"
         android:layout_height="150dp"/>
     <LinearLayout
+        android:id="@+id/find_selector_ll"
+        android:layout_below="@+id/find_froup_viewpage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal">
@@ -19,21 +24,27 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:src="@drawable/cicle_selector"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:src="@drawable/cicle_selector"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:src="@drawable/cicle_selector"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:src="@drawable/cicle_selector"/>
     </LinearLayout>
     <RelativeLayout
+        android:id="@+id/find_new_group_rl"
+        android:layout_below="@id/find_selector_ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="15dp">
@@ -54,24 +65,35 @@
         <Button
             android:id="@+id/see_all_btn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="#469de6"
             android:text="查看全部"
             android:textColor="#ffffff"
             android:layout_alignParentRight="true"/>
     </RelativeLayout>
-    <HorizontalScrollView
+<HorizontalScrollView
+    android:id="@+id/group_horizontal"
+    android:layout_below="@+id/find_new_group_rl"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    android:layout_marginLeft="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
+        android:layout_height="match_parent">
+       <GridView
+            android:id="@+id/horizontal_horizontal_grid"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
-    </HorizontalScrollView>
+            android:layout_height="match_parent"
+            android:horizontalSpacing="15dp"
+            android:verticalSpacing="10dp"
+            android:numColumns="8" />
+    </LinearLayout>
+</HorizontalScrollView>
     <RelativeLayout
+        android:id="@+id/more_rl"
+        android:layout_below="@id/group_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="15dp">
@@ -92,7 +114,7 @@
         <Button
             android:id="@+id/see_more_btn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:background="#469de6"
             android:text="查看更多"
             android:textColor="#ffffff"
@@ -100,4 +122,4 @@
     </RelativeLayout>
 
 
-</LinearLayout>
+</RelativeLayout>

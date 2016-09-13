@@ -41,16 +41,15 @@
 
     </RelativeLayout>
     <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swap_layout"
+        android:id="@+id/find_swap_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
         <ListView
-            android:id="@+id/list_view"
+            android:id="@+id/find_list_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:dividerHeight="10dp"
-            android:padding="10dp"
             android:divider="#eeeeee" />
     </android.support.v4.widget.SwipeRefreshLayout>
 

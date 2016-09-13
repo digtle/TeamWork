@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#98000000"
+    >
     <ImageView
-        android:src=""
+        android:id="@+id/find_banner"
+        android:background="@drawable/article_default"
+        android:scaleType="fitXY"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-    <RelativeLayout
-        android:id="@+id/aritcle_rl"
+    <ImageView
+        android:id="@+id/find_backgroud"
+        android:background="#32000000"
+        android:scaleType="fitXY"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,45 +28,41 @@
             android:layout_marginLeft="15dp">
             <ImageView
                 android:id="@+id/type_iv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/article_tag"/>
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_local_offer_white_24dp"/>
             <TextView
                 android:id="@+id/type_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="尾巴精选"
+                android:textColor="#ffffff"
                 android:layout_toRightOf="@id/type_iv"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center_vertical"/>
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
+            android:layout_marginRight="120dp"
             android:layout_marginLeft="15dp">
             <TextView
                 android:id="@+id/line"
-                android:layout_width="8dp"
+                android:layout_width="4dp"
                 android:layout_height="40dp"
                 android:background="#469de6" />
             <TextView
                 android:id="@+id/title_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#ffffff"
                 android:text="商务人士的定制机 , 金力M6 Plus"
                 android:layout_toRightOf="@id/line"
                 android:layout_marginLeft="15dp"
                 android:textSize="15sp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="轻体验"
-                android:layout_alignLeft="@id/title_tv"
-                android:layout_below="@id/title_tv"
-                android:textSize="15sp"/>
+
         </RelativeLayout>
     </LinearLayout>
-    </RelativeLayout>
 
 </RelativeLayout>

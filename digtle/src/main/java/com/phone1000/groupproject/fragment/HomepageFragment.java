@@ -61,7 +61,8 @@ public class HomepageFragment extends Fragment implements IjsonView{
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            swapLayout.setRefreshing(false);
+
+
         }
     };
     @Override

@@ -101,7 +101,7 @@ private View headerView;
         //开启网络下载获取数据
         jsonHttpUtils = JsonHttpUtils.newInstance();
 
-        jsonHttpUtils.load(DigtleUrl.FIND_MOST_NEW_URL,null,this,JsonHttpUtils.REQUEST_METHOD_GET);
+        jsonHttpUtils.load(DigtleUrl.GROUP_MOST_NEW_URL,null,this,JsonHttpUtils.REQUEST_METHOD_GET);
 
     }
 
@@ -162,7 +162,7 @@ private View headerView;
                     public void run() {
                         //加载数据
                         newlistBeenList.clear();
-                        jsonHttpUtils.load(DigtleUrl.FIND_MOST_NEW_URL,null,TeamFragmentLeft.this,JsonHttpUtils.REQUEST_METHOD_GET);
+                        jsonHttpUtils.load(DigtleUrl.GROUP_MOST_NEW_URL,null,TeamFragmentLeft.this,JsonHttpUtils.REQUEST_METHOD_GET);
                         //更新完后调用该方法结束刷新
 
                     }

@@ -81,7 +81,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/ic_news_black_24dp"
+                    android:src="@drawable/category_news"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/remen_tv"/>
                 <TextView
