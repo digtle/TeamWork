@@ -131,6 +131,22 @@ private int dp2pix(int size){
         headerView  = LayoutInflater.from(mContext).inflate(R.layout.find_fragment_headerview,null,false);
 
         findBanner = (ViewPager) headerView.findViewById(R.id.find_banner);
+        findBanner.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
         findGroupViewpager = (ViewPager) headerView.findViewById(R.id.find_froup_viewpage);
         //获取小组的视图
         groupGridView = (GridView) headerView.findViewById(R.id.horizontal_horizontal_grid);

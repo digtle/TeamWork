@@ -22,8 +22,8 @@
         <activity
             android:name=".ui.MainPageDetailActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".ui.TeamHeadDetailsActivity" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".ui.TeamNewAritcleActivity" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+        <activity android:name=".ui.TeamHeadDetailsActivity" />
+        <activity android:name=".ui.TeamNewAritcleActivity"/>
     </application>
 
 </manifest>
