@@ -18,6 +18,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.phone1000.groupproject.R;
+import com.phone1000.groupproject.TeamHeadDetailsWebActivity;
 import com.phone1000.groupproject.bean.DigtleUrl;
 import com.phone1000.groupproject.bean.MainPageAritcleInfo;
 import com.phone1000.groupproject.http.JsonHttpUtils;

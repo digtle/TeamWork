@@ -252,6 +252,4 @@ private View headerView;
             container.removeView((View) object);
         }
     }
-
-
 }
