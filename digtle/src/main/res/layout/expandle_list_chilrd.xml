@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="60dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="#12000000"
+        >
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/post_comment_logo"
+        android:src="@drawable/user_pic_default"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+    <TextView
+        android:id="@+id/post_comment_name"
+        android:layout_toRightOf="@id/post_comment_logo"
+        android:textSize="8sp"
+        android:text="死鬼H"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/post_commnt_content"
+        android:layout_marginTop="5dp"
+        android:text="现在的生活很好了"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:layout_below="@+id/post_comment_name"
+        android:layout_alignLeft="@id/post_comment_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/post_tiem_data"
+        android:layout_alignParentRight="true"
+        android:text="13分钟前"
+        android:textSize="8sp"
+        android:layout_alignTop="@+id/post_comment_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_below="@+id/post_commnt_content"
+    android:layout_marginTop="5dp"
+    android:background="#12000000"
+    />
+        </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.phone1000.groupproject.ui.TeamNewAritcleActivity">
+    <RelativeLayout
+        android:id="@+id/team_actionbar_rl"
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="?actionBarSize">
+        <ImageButton
+            android:id="@+id/team_ariticle_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/ic_arrow_back_black_36dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <ImageButton
+            android:id="@+id/team_ariticle_commend"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_more_vert_black_24dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+        <ImageButton
+            android:id="@+id/share_ib"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_share_black_36dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/team_ariticle_commend"
+            android:layout_marginRight="30dp"/>
+    </RelativeLayout>
+<ExpandableListView
+    android:id="@+id/aritcle_detail_exlist"
+    android:layout_below="@+id/team_actionbar_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@null"
+    android:layout_above="@+id/team_ariticle_comment_rl"
+    >
+
+</ExpandableListView>
+    <RelativeLayout
+        android:id="@+id/team_ariticle_comment_rl"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <ImageView
+            android:id="@+id/aritcle_user_logo"
+            android:src="@drawable/user_pic_default"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <EditText
+            android:id="@+id/aritcle_comment"
+            android:layout_toRightOf="@id/aritcle_user_logo"
+            android:layout_marginLeft="20dp"
+            android:hint="我来说两句"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+</RelativeLayout>
