@@ -11,15 +11,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainPageDetailActivity extends AppCompatActivity {
-//    @BindView(R.id.detail_web)
+    @BindView(R.id.detail_web)
     WebView webView;
     private final  String BASE_URL ="http://www.baidu.com";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page_detail);
-//        ButterKnife.bind(this);
-//        initView();
+        ButterKnife.bind(this);
+        initView();
     }
 
     private void initView() {

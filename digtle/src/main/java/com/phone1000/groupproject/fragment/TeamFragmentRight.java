@@ -1,6 +1,7 @@
 package com.phone1000.groupproject.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.phone1000.groupproject.R;
@@ -15,6 +17,7 @@ import com.phone1000.groupproject.adapter.TeamNewListAdapter;
 import com.phone1000.groupproject.bean.DigtleUrl;
 import com.phone1000.groupproject.bean.MostnewListInfo;
 import com.phone1000.groupproject.http.JsonHttpUtils;
+import com.phone1000.groupproject.ui.TeamNewAritcleActivity;
 import com.phone1000.groupproject.view.IjsonView;
 
 import org.json.JSONArray;
@@ -63,7 +66,7 @@ public class TeamFragmentRight extends Fragment implements IjsonView {
 
     private void initView() {
         final SwipeRefreshLayout myRefreshListView = (SwipeRefreshLayout) view.findViewById(R.id.swipe_layout);
-        ListView mListView = (ListView) view.findViewById(R.id.list_view);
+        final ListView mListView = (ListView) view.findViewById(R.id.list_view);
            adapter = new TeamNewListAdapter(mContext,beanList);
         mListView.setAdapter(adapter);
         //设置下拉刷新监听器
@@ -85,7 +88,15 @@ public class TeamFragmentRight extends Fragment implements IjsonView {
             }
         });
         //设置加载监听器
-//        myRefreshListView.
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(mContext, TeamNewAritcleActivity.class);
+                String tid = beanList.get(position).getTid();
+                intent.putExtra("tid",tid);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -111,6 +122,7 @@ public class TeamFragmentRight extends Fragment implements IjsonView {
 
                 mostnewListInfo.setAttachList(attachList);
                 mostnewListInfo.setAttachcount(attchcount);
+                mostnewListInfo.setTid(jsonObject1.getString("tid"));
                 mostnewListInfo.setAuthor(jsonObject1.getString("author"));
                 mostnewListInfo.setAuthorid(jsonObject1.getString("authorid"));
                 mostnewListInfo.setDateline(jsonObject1.getString("dateline"));

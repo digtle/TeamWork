@@ -1,6 +1,7 @@
 package com.phone1000.groupproject.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -12,6 +13,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.HorizontalScrollView;
@@ -30,6 +32,7 @@ import com.phone1000.groupproject.bean.MostnewListInfo;
 import com.phone1000.groupproject.http.JsonHttpUtils;
 import com.phone1000.groupproject.presenter.impl.IfindGroupImpl;
 import com.phone1000.groupproject.presenter.impl.IthirdBannnerImpl;
+import com.phone1000.groupproject.ui.TeamNewAritcleActivity;
 import com.phone1000.groupproject.view.IfindGroupView;
 import com.phone1000.groupproject.view.IjsonView;
 import com.phone1000.groupproject.view.IthirdBannerView;
@@ -181,6 +184,15 @@ private int dp2pix(int size){
                 },2000);
             }
         });
+        findListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String tid = newlistBeenList.get(position-1).getTid();
+                Intent intent = new Intent(mContext, TeamNewAritcleActivity.class);
+                intent.putExtra("tid",tid);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -213,6 +225,7 @@ private int dp2pix(int size){
 
                 mostnewListInfo.setAttachList(attachList);
                 mostnewListInfo.setAttachcount(attchcount);
+                mostnewListInfo.setTid(jsonObject1.getString("tid"));
                 mostnewListInfo.setAuthor(jsonObject1.getString("author"));
                 mostnewListInfo.setAuthorid(jsonObject1.getString("authorid"));
                 mostnewListInfo.setDateline(jsonObject1.getString("dateline"));

@@ -10,6 +10,10 @@ public class DigtleUrl {
     public  static  final  String GROUP_WELL_CHOSEN= "http://www.dgtle.com/api/dgtle_api/v1/api.php?REQUESTCODE=46&apikeys=DGTLECOM_APITEST1&digest=1&page=1&perpage=20";
     public  static  final  String USER_LOGO_URL ="http://www.dgtle.com/uc_server/data/avatar/000/";
     public static final  String FIND_ARTITLE_INGO_URL ="http://www.dgtle.com/api/dgtle_api/v1/api.php?REQUESTCODE=62&apikeys=DGTLECOM_APITEST1&page=1&perpage=20";
+    public  static  final  String FIND_ARTICLE_DETAIL_URL ="http://www.dgtle.com/api/dgtle_api/v1/api.php?REQUESTCODE=47&apikeys=DGTLECOM_APITEST1&tid=";
+   public  static  final  String FIND_ARITICLE_COMMENTLIST_URL ="http://www.dgtle.com/api/dgtle_api/v1/api.php?charset=UTF8&dataform=json&swh=480x800&apikeys=DGTLECOM_APITEST1&modules=forum&actions=reply&attachment=1&idtype=tid&postcomment=1&tid=";
+   public  static final  String FIND_ARTICLE_DETAIL_FOOTURL="&likelist=1&attachment=1";
+    public static  final String FIND_ARRICLE_COMMENTLIST_FOOTURL="&limit=0_30";
     public static String  getUserLogoUrl(String  aid){
       String  str = "";
       StringBuffer  parms = new StringBuffer();
@@ -29,5 +33,10 @@ public class DigtleUrl {
       parms.append(USER_LOGO_URL).append(value1).append("/").append(value2).append("/").append(value3).append("_avatar_middle.jpg");
         return  parms.toString();
   }
+    //将各个参数拼接起来组成URL
+    public static String getDetailUrl(String baseurl,String tid,String footurl){
+
+        return  baseurl+tid+footurl;
+    }
 
 }

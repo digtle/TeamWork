@@ -1,68 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingTop="10dp"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <LinearLayout
-            android:id="@+id/item_ll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="horizontal">
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/home_avatar_image"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
                 android:src="@drawable/avatar_middle"/>
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:paddingLeft="20dp"
-                android:gravity="center_vertical">
 
                 <TextView
                     android:id="@+id/user_name_tv"
+                    android:gravity=""
+                    android:layout_toRightOf="@+id/home_avatar_image"
+                    android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:layout_height="40dp"
                     android:text="大王叫我来巡山"
-                    android:textSize="12sp"
+                    android:textSize="18sp"
                     android:textColor="#000000"/>
-
-            </RelativeLayout>
             <TextView
                 android:id="@+id/time_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:text="今天 8:08"
-                android:textSize="10sp"
-                android:layout_gravity="center_vertical"/>
-        </LinearLayout>
+                android:textSize="12sp"
+                android:layout_marginRight="10dp"
+                android:layout_alignBaseline="@+id/user_name_tv"
+                />
         <TextView
+            android:id="@+id/detail_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/user_name_tv"
+            android:layout_alignLeft="@+id/home_avatar_image"
             android:text="开学了"
-            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:textColor="#000000"
-            android:textSize="15sp"/>
+            android:textSize="18sp"/>
         <TextView
             android:id="@+id/article_summay"
+            android:layout_below="@id/detail_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:text="八月未来到承德塞罕坝坝上草原，由于工作繁忙，只选择了几个坝上的景点随意拍了点照片，八月底坝上的温度还不算低，坝上草原刚刚有..."
-            android:maxLines="2"
-            android:textSize="10sp"/>
+            android:textSize="12sp"/>
         <ListView
             android:id="@+id/pic_image_list"
+            android:layout_below="@+id/article_summay"
+            android:divider="@null"
             android:layout_width="match_parent"
-            android:layout_height="10dp"/>
+            android:layout_height="wrap_content"/>
+
         <TextView
+            android:id="@+id/thumbs_number_tv"
+            android:layout_below="@id/pic_image_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -70,10 +67,39 @@
             android:text="13人点赞了"
             android:textSize="10sp"/>
         <GridView
+            android:id="@+id/logo_grid"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:paddingRight="40dp"
+            android:layout_below="@+id/thumbs_number_tv"
+            android:layout_alignLeft="@+id/thumbs_number_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:numColumns="auto_fit"
-            android:columnWidth="90dp"/>
-
-    </LinearLayout>
-</android.support.v7.widget.CardView>
+            android:horizontalSpacing="10dp"
+            android:numColumns="8"
+          />
+    <TextView
+        android:id="@+id/dividline"
+        android:layout_below="@+id/logo_grid"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#12000000"
+        />
+        <TextView
+            android:id="@+id/new_comment"
+            android:text="最新评论"
+            android:layout_below="@+id/dividline"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/new_comment_number"
+            android:layout_marginLeft="5dp"
+            android:layout_alignBaseline="@+id/new_comment"
+            android:layout_toRightOf="@+id/new_comment"
+            android:text="5"
+            android:textSize="15sp"
+            android:textColor="#3A93FF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+</RelativeLayout>

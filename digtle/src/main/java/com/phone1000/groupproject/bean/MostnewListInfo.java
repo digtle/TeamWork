@@ -11,8 +11,32 @@ public class MostnewListInfo {
     private String author;
     private String authorid;
     private String dateline;
+    private List<LikeListBean> listBeanList;
+
+    public List<LikeListBean> getListBeanList() {
+        return listBeanList;
+    }
+
+    public void setListBeanList(List<LikeListBean> listBeanList) {
+        this.listBeanList = listBeanList;
+    }
+
+    public String getTid() {
+
+        return tid;
+    }
+
+    public void setTid(String tid) {
+        this.tid = tid;
+    }
+
+    public MostnewListInfo(String tid) {
+        this.tid = tid;
+    }
+
+    private String tid;
   public  MostnewListInfo(){};
-    public MostnewListInfo(int attachcount, List<String> attachList, String author, String authorid, String dateline, String forum_icon, String recommend_add, String forum_name, String postcommentcount, String replies, String subject, String summary) {
+    public MostnewListInfo(int attachcount, List<String> attachList, String author, String authorid, String dateline, String forum_icon, String recommend_add, String forum_name, String postcommentcount, String replies, String subject, String summary,String tid) {
         this.attachcount = attachcount;
         this.attachList = attachList;
         this.author = author;
@@ -25,6 +49,7 @@ public class MostnewListInfo {
         this.replies = replies;
         this.subject = subject;
         this.summary = summary;
+        this.tid = tid;
     }
 
     private String forum_icon;
@@ -131,5 +156,49 @@ public class MostnewListInfo {
     private String replies;
     private String subject;
     private String summary;
+class LikeListBean{
+    private String avatar;
+    private String dateline;
+    private String uid;
+    private String username;
 
+    public LikeListBean(String avatar, String dateline, String uid, String username) {
+        this.avatar = avatar;
+        this.dateline = dateline;
+        this.uid = uid;
+        this.username = username;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getDateline() {
+        return dateline;
+    }
+
+    public void setDateline(String dateline) {
+        this.dateline = dateline;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+}
 }
