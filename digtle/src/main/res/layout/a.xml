@@ -18,7 +18,6 @@
                     android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:text="大王叫我来巡山"
                     android:textSize="18sp"
                     android:textColor="#000000"/>
             <TextView
@@ -48,14 +47,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="八月未来到承德塞罕坝坝上草原，由于工作繁忙，只选择了几个坝上的景点随意拍了点照片，八月底坝上的温度还不算低，坝上草原刚刚有..."
-            android:textSize="12sp"/>
+            android:textSize="14sp"/>
         <com.phone1000.groupproject.customview.CustomListview
             android:id="@+id/pic_image_list"
             android:layout_below="@+id/article_summay"
             android:divider="@null"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"/>
 
         <TextView
             android:id="@+id/thumbs_number_tv"

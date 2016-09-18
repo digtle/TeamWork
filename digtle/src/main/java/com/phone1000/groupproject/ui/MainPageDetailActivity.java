@@ -75,21 +75,6 @@ public class MainPageDetailActivity extends AppCompatActivity implements IjsonVi
     private void initHeaderView() {
         headView = LayoutInflater.from(this).inflate(R.layout.main_page_detail_headerview,null,false);
         headerViewInflater = new InflaterHeaderView(headView);
-        //设置相关属性
-//        settings.setDisplayZoomControls(true);
-////        settings.setJavaScriptCanOpenWindowsAutomatically(true);
-////        settings.setJavaScriptEnabled(true);
-////        //在网页加载完图片后在显示
-////        settings.setBlockNetworkImage(true);
-//        settings.setUseWideViewPort(true);
-////        settings.setLoadWithOverviewMode(true);
-//        //设置支持缓存
-//        settings.setAppCacheEnabled(true);
-//        //设置支持缩放
-//        settings.setSupportZoom(true);
-//        settings.setBuiltInZoomControls(true);
-////        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-
 
     }
 
@@ -138,8 +123,8 @@ public class MainPageDetailActivity extends AppCompatActivity implements IjsonVi
             String authorId = articledata.getString("authorid");
             String userLogoUrL = DigtleUrl.getUserLogoUrl(authorId);
 
-            Picasso.with(mContext).load(bannerUrl).into(headerViewInflater.titleImage);
-            Picasso.with(mContext).load(userLogoUrL).into(headerViewInflater.authorLogo);
+            Picasso.with(mContext).load(bannerUrl).placeholder(R.drawable.article_default).into(headerViewInflater.titleImage);
+            Picasso.with(mContext).load(userLogoUrL).placeholder(R.drawable.user_pic_default).into(headerViewInflater.authorLogo);
             headerViewInflater.titleTv.setText(title);
             headerViewInflater.catNameTv.setText(catname);
             headerViewInflater.authorTv.setText(author);
@@ -166,21 +151,21 @@ public class MainPageDetailActivity extends AppCompatActivity implements IjsonVi
              headerViewInflater.commnetName1.setText(commentListBean1.getAuthor());
              headerViewInflater.contentTv1.setText(Html.fromHtml(commentListBean1.getMessage()));
              String useLogoUrl  = DigtleUrl.getUserLogoUrl(commentListBean1.getAuthorid());
-             Picasso.with(mContext).load(useLogoUrl).into(headerViewInflater.commnetLogo1);
+             Picasso.with(mContext).load(useLogoUrl).placeholder(R.drawable.user_pic_default).into(headerViewInflater.commnetLogo1);
              headerViewInflater.commentTime1.setText(TimeForamt.dateInfo(commentListBean1.getDateLine()));
 
             CommentListBean commentListBean2 = commentListBeanList.get(1);
             headerViewInflater.commnetName2.setText(commentListBean2.getAuthor());
             headerViewInflater.contentTv2.setText(Html.fromHtml(commentListBean2.getMessage()));
             String useLogoUrl1  = DigtleUrl.getUserLogoUrl(commentListBean2.getAuthorid());
-            Picasso.with(mContext).load(useLogoUrl1).into(headerViewInflater.commnetLogo2);
+            Picasso.with(mContext).load(useLogoUrl1).placeholder(R.drawable.user_pic_default).into(headerViewInflater.commnetLogo2);
             headerViewInflater.commentTime2.setText(TimeForamt.dateInfo(commentListBean2.getDateLine()));
 
             CommentListBean commentListBean3 = commentListBeanList.get(2);
             headerViewInflater.commnetName3.setText(commentListBean3.getAuthor());
             headerViewInflater.contentTv3.setText(Html.fromHtml(commentListBean3.getMessage()));
             String useLogoUrl2  = DigtleUrl.getUserLogoUrl(commentListBean3.getAuthorid());
-            Picasso.with(mContext).load(useLogoUrl2).into(headerViewInflater.commnetLogo3);
+            Picasso.with(mContext).load(useLogoUrl2).placeholder(R.drawable.user_pic_default).into(headerViewInflater.commnetLogo3);
             headerViewInflater.commentTime3.setText(TimeForamt.dateInfo(commentListBean3.getDateLine()));
 
 
@@ -199,6 +184,7 @@ public class MainPageDetailActivity extends AppCompatActivity implements IjsonVi
             String detailBaseUrl = ContentBaseUrl.BASE_URL_HEAD+content+ContentBaseUrl.BASE_URL_FOOT;
             WebSettings settings = headerViewInflater.detailWeb.getSettings();
             settings.setUseWideViewPort(true);
+            settings.setJavaScriptEnabled(true);
             headerViewInflater.detailWeb.loadDataWithBaseURL(null,detailBaseUrl,"text/html","UTF-8",null);
             progressDialog.dismiss();
         } catch (JSONException e) {

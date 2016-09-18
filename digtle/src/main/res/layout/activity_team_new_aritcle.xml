@@ -37,7 +37,7 @@
             android:layout_toLeftOf="@id/team_ariticle_commend"
             android:layout_marginRight="30dp"/>
     </RelativeLayout>
-<ExpandableListView
+<com.phone1000.groupproject.customview.CustomExpanbleListView
     android:id="@+id/aritcle_detail_exlist"
     android:layout_below="@+id/team_actionbar_rl"
     android:layout_width="match_parent"
@@ -46,7 +46,7 @@
     android:layout_above="@+id/team_ariticle_comment_rl"
     >
 
-</ExpandableListView>
+</com.phone1000.groupproject.customview.CustomExpanbleListView>
     <RelativeLayout
         android:id="@+id/team_ariticle_comment_rl"
         android:layout_alignParentBottom="true"
