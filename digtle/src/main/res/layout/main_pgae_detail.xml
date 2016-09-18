@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/title_rl"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        >
+
+        <ImageButton
+            android:id="@+id/header_view_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/ic_arrow_back_black_36dp" />
+
+        <ImageView
+            android:id="@+id/bookmark"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:layout_toLeftOf="@+id/share_ib"
+            android:background="@drawable/ic_bookmark_border_black_36dp" />
+
+        <ImageButton
+            android:id="@+id/comment_ib"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_comment_black_36dp" />
+
+        <ImageButton
+            android:id="@+id/share_ib"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:layout_toLeftOf="@id/comment_ib"
+            android:background="@drawable/ic_share_black_36dp" />
+    </RelativeLayout>
+
+    <ListView
+    android:id="@+id/main_page_list"
+        android:layout_below="@+id/title_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+</ListView>
+</RelativeLayout>

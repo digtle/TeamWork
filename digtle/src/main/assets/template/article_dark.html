@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title></title>
+<meta name="Generator" content="Cocoa HTML Writer">
+<meta name="CocoaVersion" content="1187.34">
+<style type="text/css">
+    * {margin:0; padding:0px}
+body { color:#4b4c4c !important; padding:0 0 0px 0; margin: 0;background: #eeeeee;font-family:'PingFang SC', 'sans-serif' !important;font-weight:normal !important}
+font { color:#4b4c4c !important; background-color: transparent !important;}
+div#v-main {
+    width:<!-- img size -->;
+    font-size:<!-- font size -->px;
+    line-height: 27px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    word-wrap: break-word;
+    padding: 0px 25px;
+    border-bottom: 1px solid #d2d2d2;
+    color: #404040;
+}
+div#v-main a {color:#4b4c4c; }
+div#v-main img{max-width:<!-- device size --> !important;margin-left: -25.5px;display: block;};
+
+div#v-titleimage {width:<!-- device size -->; margin:0px auto;background: #fff}
+
+#v-main font[size="5"]{line-height: 35px}
+#v-main font[size="6"]{line-height: 35px}
+
+iframe {width:<!-- device size -->;max-width:<!-- device size --> !important; margin-left: -25.5px;}
+img {max-width:<!-- img size --> !important; height:auto !important;}
+    img#titleimage {width:<!-- device size -->; max-width:<!-- device size --> !important;vertical-align: top;display: block;}
+    
+    div#v-titleblock {width:<!-- device size -->;margin:0 auto; padding-top: 0px;background:#FFFFFF;}
+    div.title_separator { height: 20px; padding:0 10px 40px 0; clear: both;text-align: center}
+    div.title_separator span {font-size: 11px; background-color: #FFFFFF; color:#828282;}
+    div#title { color:#404040; width:<!-- title width -->px; font-size: <!-- title font size -->px; text-overflow:ellipsis; overflow:hidden; -webkit-box-orient: horizontal;-webkit-box-align: center; text-align: center; margin: 0px auto;padding:40px 0}
+    div#subtitle {text-align: <!-- subtitle align -->; color:#909090; margin-left:10px; padding: 6px 0 0 0; font-size: 12px; width:<!-- title width -->px; float:left;}
+    
+    div#avatar {width:35px; height:35px; float:left; padding-left:10px;}
+    div#avatar img {width:35px; height:35px; border-radius: 3px;}
+    #commentBtn { width: 100%; height: 35px; line-height: 15px; font-size:12px;padding: 10px 0; border:none;text-align: center; color: #fff;background: #469de6;}
+    
+    @media only screen and (max-width: 320px) {
+    
+    }
+  @media only screen and (min-width: 321px) {
+  
+  }
+
+    @media only screen and (max-width: 320px) {
+        div.app_image_layer { background: url("file:///android_asset/app_transparent_layer.png") no-repeat left center;}
+    }
+    @media only screen and (min-width: 321px) {
+        div.app_image_layer { background: url("file:///android_asset/app_transparent_layer@2x.png") no-repeat left center;}
+    }
+
+    .tra_hd {
+        margin-left: 5px;
+        width: 310px;
+        height: 40px;
+        background: #eeeeee;
+        border-bottom: 5px solid #dddddd;
+        line-height: 45px;
+        text-indent: 15px;
+    }
+    .mbm {
+        margin-bottom: 10px !important;
+    }
+    .cgtl {
+        overflow: hidden;
+    }
+    
+    th {
+        text-align: right;
+        padding-left: 5px;
+        width: 120px;
+        font-size: 14px;
+    }
+    td {
+        font-size: 13px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    table {
+        empty-cells: show;
+        border-collapse: collapse;
+        width: 310px;
+        margin-left: 5px;
+    }
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+        border-bottom: 1px dashed #cccccc;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    hr {
+        border-top:1px dotted #c1c7cf;
+        border-bottom:2px solid #fff;
+        background:none;
+        height:0;
+        margin:0;
+        padding:0;
+    }
+
+#v-article {
+    margin-top: 5px;
+    padding-top:10px;
+    padding-bottom:10px;
+
+    background-color:#FFF;
+}
+.title h2 {
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right:20px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #9a9a9a;
+    font-size:16px;
+}
+.title {
+    margin-bottom: 10px;
+}
+
+.articles {
+    padding-left: 20px;
+    padding-right:20px;
+}
+
+.article-image {
+    margin-bottom: 5px;
+}
+.article-image img{
+    width: 100%;
+}
+.article-title {
+    margin-bottom: 15px;
+}
+.article-title h3 {
+    font-size: 16px;
+}
+.article-title h3 a {
+    text-decoration: none;
+    color: #555;
+}
+#v-other-articles {
+    margin-top: 5px;
+    padding-top:5px;
+    padding-bottom:10px;
+    background-color:#FFF;
+}
+#v-other-articles .title h2 {
+    padding: 5px 20px;
+    border-bottom: none;
+    color: #9a9a9a;
+}
+#v-other-articles .title {
+    
+    margin-bottom: 7px;
+    color: #4e5053;
+}
+
+.o-articles {
+    padding-left: 20px;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.o-articles .o-article {
+    margin-bottom: -1px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+.o-article .o-article-title {
+    float: right;
+    width: 100%;
+    margin-right: 50px;
+    border-right: 2px solid #f0f0f0;
+}
+.o-article h3 {
+    position: relative;
+    height: 50px;
+    padding-right: 5px;
+    font-size: 14px;
+    line-height: 25px;
+}
+.o-article h3 a {
+    position: absolute;
+    top: 50%;
+    margin-left: 52px;
+    color: #555;
+    padding-right: 5px;
+
+    font-size: 16px;
+    text-decoration: none;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.o-article-title {
+}
+.o-article-recomment {
+    float: right;
+    width: 50px;
+    border-left: 2px solid #f0f0f0;
+    text-align: center;
+    margin-left: -100%;
+}
+.o-article-recomment img {
+    width: 15px;
+    margin-bottom: 2px;
+}
+.o-article-recomment .recomment {
+    margin-top: 4px;
+}
+.o-article-recomment .o-article-recomment-num {
+    color: #9a9a9a;
+}
+.readmore {
+    padding-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.readmore a {
+    text-decoration: none;
+    color: #555;
+}
+.separationline{
+    height:20px;
+    background:#191919
+}
+.quote {
+    border-left: 2px solid #57ADFD;
+    padding: 10px 10px;
+    margin:10px 0 10px 0;
+    background: none repeat scroll 0% 0% #FAFAFA;
+    overflow: hidden;
+    color: #666;
+    line-height: 27px;
+    border: 1px solid #dfdfdf;
+	border-left: 2px solid #64b8ff
+}
+.quote img{max-width:<!-- quoteimg size --> !important; height:auto !important;}
+ul{padding-left:30px}
+ ul li{list-style-type: disc;}
+ 
+.article_end{padding:7px 12px;border:1px solid #aeaeae; font-size:15px;text-align: center;color:#aeaeae ;width: 70px;margin: 0 auto;border-radius: 4px  }
+#author_info {
+    background: #FFFFFF;
+    border-left: 4px solid #469de6;
+    border-top: 1px solid #d2d2d2;
+    padding: 12px;
+    position: relative;
+    background: url(file:///android_asset/author_bg.png);
+    margin-top: 13px;
+    background-size: cover;
+    background: #fff;
+}
+#author_info .author{width: 100%; height:35px;margin: 17px 0;}
+#author_info .author img{width: 35px!important; height:35px !important; border-radius:50px;}
+#author_info .author span:first-child{display: inline-block;width: 35px;height: 35px;vertical-align: middle;}
+#author_info .author span:last-child{font-size: 18px; margin-left: 12px;color: #404040;display: inline-block;vertical-align: middle;overflow: hidden;white-space: nowrap;width:55%;height: 27px;line-height: 27px}
+#author_info .author span:last-child a{color: #404040 ;text-decoration: none;}
+#author_info .sign{ width: 100%;font-size: 12px;color:#9a9a9a;white-space: nowrap;overflow-x:hidden;}
+#author_info .follow{position: absolute;top: 40px;right: 23px;font-size: 15px;color: #fff;background-color: #469de6;padding:5px 17px;border-radius: 4px;width: 70px;height: 29px;line-height: 29px;text-align: center;}
+#comment {
+    background: #FFFFFF;
+    margin-top: 13px;
+    color: #404040;
+    border-top: 1px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+}
+#comment .comment_title {font-size:12px;color:#404040;border-bottom:1px solid #eeeeee;padding:11px 15px}
+#comment .comment_title span{padding-left: 5px;color:  #469de6;}
+#comment .comment_list {padding:0 14px }
+#comment .comment_list div[class^="comment_"]{padding: 12px 0;border-bottom:1px solid #eeeeee ;}
+#comment .comment_list div:last-child {border-bottom: 0}
+#comment .comment_list div[class^="comment_"] .avatar{width: 34px; height:34px; border-radius:50px;vertical-align: top;float: left;  }
+#comment .comment_list div[class^="comment_"] .avatar img{width: 36px !important; height:36px !important; border-radius:50px;}
+#comment .comment_list div[class^="comment_"] .box{width: 84%; border-radius:50px;display: inline-block; padding-left: 10px;padding-top:2px }
+#comment .comment_list div[class^="comment_"] .box .author_date {color:#9a9a9a;width:100%;padding-bottom:8px;font-size:12px;height:12px;overflow: hidden;}
+#comment .comment_list div[class^="comment_"] .box .author_date a {color:#9a9a9a;font-size: 15px}
+#comment .comment_list div[class^="comment_"] .box .content {line-height: 20px;font-size: 15px;text-indent: 0;}
+#comment .comment_list div[class^="comment_"] .box .attachimglist{width: 100%;height: auto;margin-top: 12px;} 
+#comment .comment_list div[class^="comment_"] .box .attachimg {width: 60px; height: 60px; background-color: #EEE; margin-right: 16px; margin-bottom: 16px; overflow: hidden;float: left; }
+#comment .comment_list div[class^="comment_"] .box .attachimg img{ width: auto; height: 60px;}
+
+#recommends {
+    background: #FFFFFF;
+    position: relative;
+    margin-top: 13.5px;
+    border-bottom: 1px solid #e1e4e9;
+    border-top: 1px solid #e1e4e9;
+}
+#recommends .recommends_title{border-left: 4px solid #469de6;padding: 12px;line-height: 16px;}
+#recommends div[class^="recommend_"]{width: 100%;position: relative;box-shadow: 0px 1px 2px #BCBCBC;height: 112px;overflow: hidden; }
+#recommends div[class^="recommend_"] img{width: 100% !important;max-width: none !important;}
+#recommends div[class^="recommend_"] .mask{position: absolute; top: 0px; width: 100%; height: 112px; background: rgba(0, 0, 0, 0.5);}
+#recommends div[class^="recommend_"] .subject{
+    position: absolute;
+    top: 0px;
+    width: 60%;
+    padding: 0 20%;
+    height: 112px;
+    line-height: 20px;
+    display: table;
+    z-index: 1;
+    text-shadow: 1px 1px 1px #000;
+    font-size: 15px;
+    color: #fff;}
+#recommends div[class^="recommend_"] .subject div{display: table-cell;vertical-align: middle;text-align: center;}
+.footer_logo{text-align: center;margin-top: 10px background:#fff}
+.priceInfo{width: <!-- device size -->;margin: 0 auto; background: #000}
+
+#reply {
+    background: #FFFFFF;
+    padding-left: 16px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    position: relative;
+    margin-top: 13px;
+    background-size: cover;
+    border-top: 1px solid #d2d2d2;
+	border-bottom: 1px solid #d2d2d2
+}
+#reply .author{width: 100%; height:35px;padding: 9px 0;}
+#reply .author img{width: 35px!important; height:35px !important; border-radius:50px;}
+#reply .author span:first-child{display: inline-block;width: 35px;height: 35px;vertical-align: middle;}
+#reply .author span:last-child{font-size: 15px; margin-left: 12px;color: #9a9a9a;display: inline-block;vertical-align: middle;overflow: hidden;white-space: nowrap;width:55%;height: 27px;line-height: 27px}
+
+
+/*夜间模式*/
+.night-model{
+	background: #191919;
+	color: #5c5c5c !important;
+	font-weight: normal !important;
+}
+.night-model #v-titleblock,.night-model div#v-main,.night-model #reply,.night-model #comment,.night-model #recommends,.night-model .title_separator span{
+	background: #000;
+	color:#5c5c5c;
+	border:none;
+}
+.night-model #author_info{
+	background: #000;
+	border-top:none;
+}
+.night-model div#title,.night-model #v-main font,.night-model #author_info .author span:last-child a,.night-model #author_info>div,.night-model .recommends_title>div:first-child,.night-model #comment .comment_title{
+	color:#5c5c5c !important;
+}
+.night-model #comment .comment_list div[class^="comment_"],.night-model #comment .comment_title{
+	border-color:#363636;
+}
+.night-model .quote{
+	background-color: #191919;
+	border-color:#363636;
+	border-left-color: #64b8ff;
+}
+.night-model .quote blockquote{
+	color:#5c5c5c;
+}
+.night-model .quote font{
+	color:#5c5c5c !important;
+}
+.night-model tr{
+	border-bottom: 1px dashed #000;
+}
+.night-model hr{
+	border-top-style: solid;
+	border-bottom:none;
+}
+
+</style>
+<script type="text/JavaScript">
+    function clickElement( e ) {
+        e = e || window.event;
+        var obj = e.target;
+        if (obj.nodeName == 'IMG') {
+        }
+        else if (obj.nodeName == 'A') {
+        }
+        else if (obj.id == 'commentBtn') {
+            var href = "dgtle://showcomment";
+            location.href = href;
+        }else if (obj.id == 'v-follow') {
+            var href = "dgtle://clickfollow";
+            location.href = href;
+        }
+        else {
+            var href = "dgtle://clickOnBody";
+            location.href = href;
+        }
+    }
+    
+    function hideFollowBtn() {
+        var obj = document.getElementById("v-follow");
+        obj.style.display = "none";
+    }
+    
+    function changeFontSize(fontSize) {
+        var obj = document.getElementById("v-main");
+        obj.style.fontSize = fontSize + 'px';
+    }
+    
+    function changeImageSrc(id, src) {
+		document.getElementById(id).src = src;
+		var href = "dgtle://loadimage";
+
+		location.href = href;
+
+    }
+
+    function changeImageSrc2(id, src) {
+		document.getElementById(id).src = src;
+		var href = "dgtle://loadimage";
+    }
+
+
+    function clickImage(url,id) {
+		var href = "dgtle://clickimage|" +url;
+		if (document.getElementById(id).parentNode.tagName.toLowerCase()=="a") {
+
+		}else {
+			location.href = href;
+		}
+    }
+    
+    function showComment() {
+        
+    }
+   function clickAvatar() {
+    var href = "dgtle://clickAvatar";
+    location.href = href;
+   }
+
+    window.onload = function() {
+        var el = document.getElementById("v-body");
+        el.addEventListener("click", clickElement);
+         var dgiframe=document.getElementsByTagName('iframe');
+        for (var x in dgiframe){
+            if(dgiframe[x].tagName=='IFRAME'){
+                    dgiframe[x].width= <!-- video size -->;
+                    dgiframe[x].height= dgiframe[x].width*2/3;
+
+            }
+        }
+    }
+</script>
+    
+<link href="file:///android_asset/template/pricetable.css" rel="stylesheet">
+    
+</head>
+<body id="v-body"  class="night-model">
+<div id="v-titleimage">
+<!-- title image -->
+</div>
+    
+<div id="v-titleblock" >
+    <div id="titleblock">
+        <!-- article title -->
+        <div style="clear:both; height:1px"></div>
+    </div>
+    <div  class="title_separator">
+       <span><!-- article info --></span>
+    </div>
+</div>
+    
+    <div class="priceInfo">
+
+<!-- article priceInfo-->
+    </div>
+
+
+
+<div id="v-main">
+    <!-- article content -->
+
+    <br/>
+    <!-- special_pollDict -->
+    <br/>
+    <div class="article_end">全文完</div>
+    <br/>
+</div>
+
+<!-- authorinfo -->
+<!-- reply -->
+<!-- commentlist -->
+<!-- relative articles -->
+<!-- other articles -->
+<!-- separationline -->
+</body>
+</html>

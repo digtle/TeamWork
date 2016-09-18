@@ -1,0 +1,93 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+// @import "bootstrap/bootstrap.less";
+
+@imgRadius: 5px;
+@imgSize: 30px;
+
+@borderColor: #aaaaaa;
+@borderBorder: #bbbbbb;
+
+@divMargin: 10px;
+@globalWidth: 320px;
+
+#paySection1 {
+
+    width: @globalWidth;
+    height: 40px;
+
+    #avatar{
+        float:left;
+        width: @imgSize;
+        height: @imgSize;
+        padding-left: 5px;
+        #icon{
+            .border-top-radius(@imgRadius);
+            .border-bottom-radius(@imgRadius);
+            width: @imgSize;
+            height: @imgSize;
+        }
+    }
+
+    #header{
+        float:left;
+        padding-left: 10px;
+        #name{
+            color: #69707a;
+            font-size: 16px;
+            font-style: bold;
+        }
+        #date{
+            color: #a1a7b0;
+            font-size: 9px;
+            padding-top: 0px;
+        }
+    }
+    #pay{
+        float:right;
+        color: #e67e22;
+        padding-right: 20px;
+        font-size: 26px;
+        font-style: italic;
+    }
+}
+
+#paySection2{
+    padding-top: 5px;
+    height: 40px;
+    .colTitle{
+        font-size: 13px;
+        color: #221919;
+        text-align: center;
+    }
+    .colDescription{
+        font-size: 12px;
+        color: #69707a;
+        text-align: center;
+    }
+    #c1{
+        float:left;
+        width:85px;
+        border-right: 1px;
+        border-right-style: solid;
+        border-color: #e1e3e6;
+    }
+    #c2{
+        float:left;
+        width:68px;
+        border-right: 1px;
+        border-right-style: solid;
+        border-color: #e1e3e6;
+    }
+    #c3{
+        float:left;
+        width:68px;
+        border-right: 1px;
+        border-right-style: solid;
+        border-color: #e1e3e6;
+    }
+    #c4{
+        float:left;
+        width: 88px;
+    }
+}

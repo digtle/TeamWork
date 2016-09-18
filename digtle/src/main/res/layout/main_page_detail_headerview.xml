@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.phone1000.groupproject.ui.MainPageDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_rl">
+
+        <RelativeLayout
+            android:id="@+id/detali_web_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/image_iv"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:adjustViewBounds="true"
+                android:minWidth="10dp"
+                android:minHeight="10dp"
+                android:src="@drawable/article_default" />
+
+            <TextView
+                android:id="@+id/detali_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_iv"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="感觉自己萌萌哒 , 米兔智能儿童故事机分享"
+                android:textColor="#000000"
+                android:textSize="25sp" />
+
+            <RelativeLayout
+                android:id="@+id/detail_detail_rl"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/detali_title"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/detail_info_catname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="周边" />
+
+                <TextView
+                    android:id="@+id/detail_cicle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignBottom="@id/detail_info_catname"
+                    android:layout_toRightOf="@id/detail_info_catname"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="." />
+
+                <TextView
+                    android:id="@+id/detail_info_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_toRightOf="@id/detail_cicle"
+                    android:gravity="center"
+                    android:text="ibaby小毛豆" />
+
+                <TextView
+                    android:id="@+id/detail_cicle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignBottom="@id/detail_info_catname"
+                    android:layout_centerHorizontal="true"
+                    android:layout_toRightOf="@id/detail_info_author"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="." />
+
+                <TextView
+                    android:id="@+id/detail_info_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_toRightOf="@id/detail_cicle2"
+                    android:gravity="center"
+                    android:text="2016-9-13" />
+            </RelativeLayout>
+            <WebView
+                android:id="@+id/detail_web"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:layout_below="@id/detail_detail_rl"/>
+
+            <TextView
+                android:id="@+id/dividline1"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/detail_web"
+                android:background="#23000000" />
+            <RelativeLayout
+                android:id="@+id/webview_detail_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/dividline1">
+
+                <RelativeLayout
+                    android:id="@+id/author_info_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
+                    <TextView
+                        android:id="@+id/writer_dividline"
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:background="#3991FC" />
+
+                    <TextView
+                        android:id="@+id/writer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@id/writer_dividline"
+                        android:text="文章作者"
+                        android:textColor="#000000" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/author_logo"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignLeft="@id/writer"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/avatar_middle" />
+
+                    <TextView
+                        android:id="@+id/author_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/author_logo"
+                        android:text="ibaby小毛豆"
+                        android:textSize="15sp" />
+
+                    <Button
+                        android:id="@+id/follow"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/follow_shape"
+                        android:text="关注"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/authot_moto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/writer"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:text="不愿被服饰"
+                        android:maxLines="1"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/dividline2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/webview_detail_ll"
+                android:background="#23000000" />
+
+            <RelativeLayout
+                android:id="@+id/layout_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dividline2">
+
+                <TextView
+                    android:id="@+id/pinglun_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="最新评论"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/shuzi_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/pinglun_tv"
+                    android:layout_toRightOf="@id/pinglun_tv"
+                    android:text="12"
+                    android:textColor="#469de6"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/line6"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@id/pinglun_tv"
+                    android:background="#d8d8d8" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/touxiang_civ"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/line6"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/user_pic_default" />
+
+                <TextView
+                    android:id="@+id/biaoti_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/touxiang_civ"
+                    android:layout_alignTop="@id/touxiang_civ"
+                    android:layout_below="@id/line6"
+                    android:layout_marginLeft="10dp"
+                    android:text="Hanhelong" />
+
+                <TextView
+                    android:id="@+id/shijian_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/biaoti_tv"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:text="1小时前"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/neirong_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/biaoti_tv"
+                    android:layout_alignLeft="@id/biaoti_tv"
+                    android:layout_toRightOf="@id/touxiang_civ"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/line7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/neirong_tv"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#d8d8d8" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/touxiang2_civ"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/line7"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/user_pic_default" />
+
+                <TextView
+                    android:id="@+id/biaoti2_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line7"
+                    android:layout_alignTop="@id/touxiang2_civ"
+                    android:layout_toRightOf="@id/touxiang2_civ"
+                    android:layout_marginLeft="10dp"
+                    android:text="Hanhelong" />
+
+                <TextView
+                    android:id="@+id/shijian2_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/biaoti2_tv"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/neirong2_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/biaoti2_tv"
+                    android:layout_alignLeft="@id/biaoti2_tv"
+                    android:layout_toRightOf="@id/touxiang2_civ"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/line8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/neirong2_tv"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#d8d8d8" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/touxiang3_civ"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/line8"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/user_pic_default" />
+
+                <TextView
+                    android:id="@+id/biaoti3_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/touxiang3_civ"
+                    android:layout_toRightOf="@id/touxiang3_civ"
+                    android:layout_below="@id/line8"
+                    android:layout_marginLeft="10dp"
+                    android:text="Hanhelong" />
+
+                <TextView
+                    android:id="@+id/shijian3_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/biaoti3_tv"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/neirong3_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/biaoti3_tv"
+                    android:layout_toRightOf="@id/touxiang3_civ"
+                    android:layout_alignLeft="@id/biaoti3_tv"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/chakan_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/neirong3_tv"
+                    android:layout_margin="10dp"
+                    android:background="#469DE6"
+                    android:text="查看所有 15 条评论"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+            <TextView
+            android:id="@+id/dividline4"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@id/layout_rl"
+            android:background="#23000000" />
+            <TextView
+                android:id="@+id/line9"
+                android:layout_width="5dp"
+                android:layout_height="40dp"
+                android:background="#3991FC"
+                android:layout_below="@id/dividline4"/>
+            <RelativeLayout
+                android:id="@+id/layout2_rl"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:layout_alignBaseline="@id/line9"
+                android:layout_toRightOf="@id/line9">
+
+                <TextView
+                    android:id="@+id/tuijian_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:text="尾巴推荐"
+                    android:textSize="12sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="尾巴推荐"
+                    android:textSize="8sp"
+                    android:layout_alignLeft="@id/tuijian_tv"
+                    android:layout_below="@id/tuijian_tv"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

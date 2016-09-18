@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title></title>
+<meta name="Generator" content="Cocoa HTML Writer">
+<meta name="CocoaVersion" content="1187.34">
+<style type="text/css">
+    * {margin:0; padding:0}
+body {background:#FFFFFF; color:#4b4c4c !important; padding:0 0 10px 0; margin: 0;background: #FFFFFF;font-family:'Merriweather';font:'Merriweather';}
+font { color:#4b4c4c !important; background-color: transparent !important;}
+div#v-main {width:<!-- img size -->;font-size:<!-- font size -->px;line-height:1.5;font-family:'Merriweather';font:'Merriweather';margin:0 auto;background:#FFFFFF;word-wrap:break-word;}
+div#v-main font {font-family:'Merriweather';font:'Merriweather';}
+div#v-main a {color:#4b4c4c; }
+
+iframe {margin-left:<!-- vedio margin -->;width:300px;max-width:300px !important; height:auto !important;}
+
+div#v-titleimage {width:<!-- device size -->; height:auto !important; margin:0 auto;}
+
+    img {max-width:<!-- img size --> !important; height:auto !important;}
+    img#titleimage {width:<!-- device size -->; max-width:<!-- device size --> !important;}
+    
+    div#v-titleblock {width:<!-- device size -->;margin:0 auto; padding-top: 0px;}
+    div.title_separator { background: url("file:///android_asset/content_title_separator.png") no-repeat center center; height: 20px; padding:0 10px; clear: both;}
+    div.title_separator span {font-size: 11px; background-color: #FFFFFF; color:#828282;}
+    div#title {margin-left:10px; color:#4e5053; width:<!-- title width -->px; font-size: <!-- title font size -->px; font-weight:bold; height:<!-- title height -->px;  text-overflow:ellipsis; overflow:hidden; display: -webkit-box; -webkit-box-orient: horizontal;-webkit-box-align: center; float:left;}
+    div#subtitle {text-align: <!-- subtitle align -->; color:#909090; margin-left:10px; padding: 6px 0 0 0; font-size: 12px; width:<!-- title width -->px; float:left;}
+    
+    div#avatar {width:35px; height:35px; float:left; padding-left:10px;}
+    div#avatar img {width:35px; height:35px; border-radius: 3px;}
+    #commentBtn { width: 140px; height: 30px; line-height: 30px; font-size:15px; border:none;  font-weight:bold; font-family:'Merriweather';font:'Merriweather'; text-align: center; color: #fff; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background: -moz-linear-gradient(top, #4788c9 0%, #3e7fc4 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4788c9), color-stop(100%,#3e7fc4)); background: -webkit-linear-gradient(top, #4788c9 0%,#3e7fc4 100%); background: linear-gradient(to bottom, #4788c9 0%,#3e7fc4 100%); }
+    
+    @media only screen and (max-width: 320px) {
+        div.title_separator { background: url("file:///android_asset/content_title_separator.png") no-repeat center center; -webkit-background-size: <!-- device size --> 1px; -moz-background-size: <!-- device size --> 1px; background-size: <!-- device size --> 1px; }
+    }
+    @media only screen and (min-width: 321px) {
+        div.title_separator { background: url("file:///android_asset/content_title_separator@2x.png") no-repeat center center; -webkit-background-size: <!-- device size --> 1px; -moz-background-size: <!-- device size --> 1px; background-size: <!-- device size --> 1px;}
+    }
+    
+</style>
+<script type="text/JavaScript">
+    function clickElement( e ) {
+        e = e || window.event;
+        var obj = e.target;
+        if (obj.nodeName == 'IMG') {
+        }
+        else if (obj.nodeName == 'A') {
+        }
+        else if (obj.nodeName == 'BUTTON' && obj.id == 'commentBtn') {
+            var href = "dgtle://showcomment";
+           
+			location.href = href;
+
+        }
+        else {
+            var href = "dgtle://clickOnBody";
+         
+			location.href = href;
+
+        }
+    }
+    
+    function changeFontSize(fontSize) {
+        var obj = document.getElementById("v-main");
+        obj.style.fontSize = fontSize + 'px';
+    }
+    
+    function changeImageSrc(id, src) {
+		document.getElementById(id).src = src;
+		var href = "dgtle://loadimage";
+	
+		location.href = href;
+
+    }
+    
+    function changeImageSrc2(id, src) {
+		document.getElementById(id).src = src;
+		var href = "dgtle://loadimage";
+    }
+    
+    
+    function clickImage(url) {
+		var href = "dgtle://clickimage|" +url;
+	  
+		location.href = href;
+
+    }
+    
+    function clickImage(url,id) {
+		var href = "dgtle://clickimage|" +url;
+		if (document.getElementById(id).parentNode.tagName.toLowerCase()=="a") {
+			
+		}else {
+			location.href = href;
+		}
+    }
+    
+
+    function showComment() {
+        
+    }
+    
+    window.onload = function() {
+        var el = document.getElementById("v-main");
+        el.addEventListener("click", clickElement);
+    }
+</script>
+</head>
+<body>
+<div id="v-titleimage">
+<!-- title image -->
+</div>
+    
+<div id="v-titleblock">
+    <div style="margin:5px 0" class="title_separator">
+        <span><!-- article info --></span>
+    </div>
+    <div id="titleblock">
+        <!-- article avatar -->
+        <!-- article title -->
+        <!-- article subtitle -->
+        <div style="clear:both; height:1px"></div>
+    </div>
+    <div style="margin:4px 0" class="title_separator"></div>
+</div>
+<div id="v-main">
+<!-- article content -->
+<div style="text-align:center; padding-top:30px;"><button id="commentBtn" >查看所有评论</button></div>
+</div>
+</body>
+</html>

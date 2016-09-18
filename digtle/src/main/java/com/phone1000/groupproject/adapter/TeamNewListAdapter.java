@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.phone1000.groupproject.R;
 import com.phone1000.groupproject.bean.DigtleUrl;
 import com.phone1000.groupproject.bean.MostnewListInfo;
+import com.phone1000.groupproject.bean.TimeForamt;
 import com.phone1000.groupproject.customview.CustomGridview;
 import com.squareup.picasso.Picasso;
 
@@ -85,6 +86,7 @@ public class TeamNewListAdapter  extends BaseAdapter{
         viewHolder.userNameTv.setText(newlistBean.getAuthor());
         viewHolder.shortText.getLineHeight();
         viewHolder.commentTv.setText(newlistBean.getReplies());
+        viewHolder.timeTv.setText(TimeForamt.createTime(newlistBean.getDateline()));
         viewHolder.likeTv.setText(newlistBean.getRecommend_add());
         //判断第一个textview的行数是否超过了8，没有就设置按钮的影藏
         int   attachCount = newlistBean.getAttachcount();

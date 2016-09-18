@@ -7,11 +7,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.phone1000.groupproject.R;
 import com.phone1000.groupproject.bean.DigtleUrl;
+import com.phone1000.groupproject.bean.TimeForamt;
+import com.phone1000.groupproject.customview.CustomListview;
 import com.phone1000.groupproject.http.JsonHttpUtils;
 import com.phone1000.groupproject.view.IjsonView;
 import com.squareup.picasso.Picasso;
@@ -38,7 +39,7 @@ public class GetDetailHeadView implements IjsonView {
     private TextView titleTv,userNameTv;
     private TextView summaryTv;
     private TextView timeDataTv;
-    private ListView imageList;
+    private CustomListview imageList;
     private TextView thumbTv;
     private GridView imageGrid;
     private TextView commentNumber;
@@ -66,7 +67,7 @@ public class GetDetailHeadView implements IjsonView {
         userNameTv = (TextView) headerView.findViewById(R.id.user_name_tv);
         summaryTv = (TextView) headerView.findViewById(R.id.article_summay);
         timeDataTv = (TextView) headerView.findViewById(R.id.time_data);
-        imageList = (ListView) headerView.findViewById(R.id.pic_image_list);
+        imageList = (CustomListview) headerView.findViewById(R.id.pic_image_list);
         thumbTv = (TextView) headerView.findViewById(R.id.thumbs_number_tv);
         imageGrid = (GridView) headerView.findViewById(R.id.logo_grid);
         commentNumber = (TextView) headerView.findViewById(R.id.new_comment_number);
@@ -116,10 +117,13 @@ public class GetDetailHeadView implements IjsonView {
             String summary = thread_info.getString("message");
             String recommend_add = thread_info.getString("recommend_add");
             String recommends = thread_info.getString("recommends");
+            String datelinew = thread_info.getString("dateline");
             Picasso.with(mContex).load(authorLogoUrl).into(authorLogo);
             userNameTv.setText(authorName);
             titleTv.setText(title);
             summaryTv.setText(summary);
+            timeDataTv.setText(TimeForamt.createTime(datelinew));
+
             thumbTv.setText(recommend_add + "人赞了");
             commentNumber.setText(recommends);
             gridAdapter.notifyDataSetChanged();
@@ -151,7 +155,7 @@ public class GetDetailHeadView implements IjsonView {
               View view = LayoutInflater.from(mContex).inflate(R.layout.detail_grid_item,null,false);
                 CircleImageView logoImage = (CircleImageView) view.findViewById(R.id.detail_item_image);
                 String imageUrl = thumbUserList.get(position);
-              Picasso.with(mContex).load(imageUrl).into(logoImage);
+              Picasso.with(mContex).load(imageUrl).placeholder(R.drawable.user_pic_default).into(logoImage);
                return view;
 
             }
@@ -184,7 +188,7 @@ public class GetDetailHeadView implements IjsonView {
                     viewHolder = (ViewHolder) view.getTag();
                 }
                 String imageUrl = imageUrlList.get(position);
-                Picasso.with(mContex).load(imageUrl).into(viewHolder.imageView);
+                Picasso.with(mContex).load(imageUrl).placeholder(R.drawable.article_default).into(viewHolder.imageView);
                 return view;
             }
             class ViewHolder{

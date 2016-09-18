@@ -14,6 +14,8 @@ public class DigtleUrl {
    public  static  final  String FIND_ARITICLE_COMMENTLIST_URL ="http://www.dgtle.com/api/dgtle_api/v1/api.php?charset=UTF8&dataform=json&swh=480x800&apikeys=DGTLECOM_APITEST1&modules=forum&actions=reply&attachment=1&idtype=tid&postcomment=1&tid=";
    public  static final  String FIND_ARTICLE_DETAIL_FOOTURL="&likelist=1&attachment=1";
     public static  final String FIND_ARRICLE_COMMENTLIST_FOOTURL="&limit=0_30";
+
+   public  static  final  String HOME_PAGE_DETAIL_URL="http://www.dgtle.com/api/dgtle_api/v1/api.php?charset=UTF8&dataform=json&swh=480x800&apikeys=DGTLECOM_APITEST1&modules=portal&actions=view&aid=";
     public static String  getUserLogoUrl(String  aid){
       String  str = "";
       StringBuffer  parms = new StringBuffer();

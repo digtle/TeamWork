@@ -7,6 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginLeft="60dp"
+        android:layout_marginRight="30dp"
         android:paddingTop="5dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
@@ -15,12 +16,12 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/post_comment_logo"
         android:src="@drawable/user_pic_default"
-        android:layout_width="20dp"
-        android:layout_height="20dp" />
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
     <TextView
         android:id="@+id/post_comment_name"
         android:layout_toRightOf="@id/post_comment_logo"
-        android:textSize="8sp"
+        android:textSize="10sp"
         android:text="死鬼H"
         android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
@@ -39,7 +40,7 @@
         android:id="@+id/post_tiem_data"
         android:layout_alignParentRight="true"
         android:text="13分钟前"
-        android:textSize="8sp"
+        android:textSize="10sp"
         android:layout_alignTop="@+id/post_comment_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

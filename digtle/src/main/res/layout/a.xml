@@ -50,7 +50,7 @@
             android:layout_marginTop="10dp"
             android:text="八月未来到承德塞罕坝坝上草原，由于工作繁忙，只选择了几个坝上的景点随意拍了点照片，八月底坝上的温度还不算低，坝上草原刚刚有..."
             android:textSize="12sp"/>
-        <ListView
+        <com.phone1000.groupproject.customview.CustomListview
             android:id="@+id/pic_image_list"
             android:layout_below="@+id/article_summay"
             android:divider="@null"

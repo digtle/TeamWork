@@ -1,0 +1,11 @@
+
+#paySection1{width:320px;height:40px;}#paySection1 #avatar{float:left;width:30px;height:30px;padding-left:5px;}#paySection1 #avatar #icon{border-top-right-radius:5px;border-top-left-radius:5px;border-bottom-right-radius:5px;border-bottom-left-radius:5px;width:30px;height:30px;}
+#paySection1 #header{float:left;padding-left:10px;}#paySection1 #header #name{padding-left:10px;color:#69707a;font-size:16px;font-style:bold;}
+#paySection1 #header #date{padding-left:10px;color:#a1a7b0;font-size:9px;padding-top:0px;}
+#paySection1 #pay{float:right;color:#e67e22;padding-right:20px;font-size:26px;font-style:italic;}
+#paySection2{padding-top:5px;height:80px;}#paySection2 .colTitle{font-size:13px;color:#221919;text-align:center;}
+#paySection2 .colDescription{font-size:12px;color:#69707a;text-align:center;}
+#paySection2 #c1{float:left;width:85px;border-right:1px;border-right-style:solid;border-color:#e1e3e6;}
+#paySection2 #c2{float:left;width:68px;border-right:1px;border-right-style:solid;border-color:#e1e3e6;}
+#paySection2 #c3{float:left;width:68px;border-right:1px;border-right-style:solid;border-color:#e1e3e6;}
+#paySection2 #c4{float:left;width:88px;}

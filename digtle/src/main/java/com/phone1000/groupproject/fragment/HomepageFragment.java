@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.phone1000.groupproject.R;
 import com.phone1000.groupproject.bean.DigtleUrl;
 import com.phone1000.groupproject.bean.MainPageAritcleInfo;
+import com.phone1000.groupproject.bean.TimeForamt;
 import com.phone1000.groupproject.http.JsonHttpUtils;
 import com.phone1000.groupproject.ui.FindBanner;
 import com.phone1000.groupproject.ui.MainPageDetailActivity;
@@ -61,7 +62,7 @@ public class HomepageFragment extends Fragment implements IjsonView{
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-
+          swapLayout.setRefreshing(false);
 
         }
     };
@@ -105,6 +106,8 @@ public class HomepageFragment extends Fragment implements IjsonView{
           @Override
           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
               Intent intent = new Intent(mContext, MainPageDetailActivity.class);
+              String aid = articleList.get(position-1).getAid();
+              intent.putExtra("aid",aid);
               startActivity(intent);
           }
       });
@@ -193,6 +196,7 @@ public class HomepageFragment extends Fragment implements IjsonView{
             String imageUrl = aritcleInfo.getPic_url();
             String authorid = aritcleInfo.getAuthorid();
             String userLogo = DigtleUrl.getUserLogoUrl(authorid);
+            viewHolder.timeDataTv.setText(TimeForamt.createTime(aritcleInfo.getDataLine()+""));
             Picasso.with(mContext).load(imageUrl).placeholder(R.drawable.article_default).into(viewHolder.picImage);
             Picasso.with(mContext).load(userLogo).placeholder(R.drawable.avatar_middle).into(viewHolder.userLogoIv);
             return view;

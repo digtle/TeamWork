@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.phone1000.groupproject.R;
 import com.phone1000.groupproject.bean.CommentListBean;
 import com.phone1000.groupproject.bean.DigtleUrl;
+import com.phone1000.groupproject.bean.TimeForamt;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -89,6 +90,7 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         CommentListBean commentListBean = commentListBeanList.get(groupPosition);
         viewHolder.authorNameTv.setText(commentListBean.getAuthor());
         viewHolder.contentTv.setText(Html.fromHtml(commentListBean.getMessage()));
+        viewHolder.dateTv.setText(TimeForamt.createTime(commentListBean.getDateLine()));
         String imageUrl = DigtleUrl.getUserLogoUrl(commentListBean.getAuthorid());
         Picasso.with(mContext).load(imageUrl).placeholder(R.drawable.user_pic_default).into(viewHolder.userLogo);
         return view;
@@ -109,6 +111,7 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         viewHolder.authorNameTv.setText(postComment.getAuthor());
         viewHolder.contentTv.setText(Html.fromHtml(postComment.getComment()));
         String imageUrl = DigtleUrl.getUserLogoUrl(postComment.getAuthorid());
+        viewHolder.dateTv.setText(TimeForamt.createTime(postComment.getDateLine()));
         Picasso.with(mContext).load(imageUrl).placeholder(R.drawable.user_pic_default).into(viewHolder.userLogo);
         return view;
     }
@@ -125,7 +128,7 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         @BindView(R.id.commnt_content)
         TextView contentTv;
         @BindView(R.id.tiem_data)
-        TextView dataTv;
+        TextView dateTv;
         public ParentViewHolder(View view){
             view.setTag(this);
             ButterKnife.bind(this,view);
@@ -139,7 +142,7 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         @BindView(R.id.post_commnt_content)
         TextView contentTv;
         @BindView(R.id.post_tiem_data)
-        TextView dataTv;
+        TextView dateTv;
         public  ChirldViewHolder(View view){
             view.setTag(this);
             ButterKnife.bind(this,view);
