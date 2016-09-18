@@ -246,6 +246,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/biaoti_tv"
                     android:layout_alignLeft="@id/biaoti_tv"
+                    android:layout_marginRight="30dp"
                     android:layout_toRightOf="@id/touxiang_civ"
                     android:textColor="#000000" />
 
@@ -291,6 +292,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/biaoti2_tv"
+                    android:layout_marginRight="30dp"
                     android:layout_alignLeft="@id/biaoti2_tv"
                     android:layout_toRightOf="@id/touxiang2_civ"
                     android:textColor="#000000" />
@@ -337,6 +339,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/biaoti3_tv"
+                    android:layout_marginRight="30dp"
                     android:layout_toRightOf="@id/touxiang3_civ"
                     android:layout_alignLeft="@id/biaoti3_tv"
                     android:textColor="#000000" />

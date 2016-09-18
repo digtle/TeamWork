@@ -12,6 +12,7 @@ import com.phone1000.groupproject.R;
 import com.phone1000.groupproject.adapter.ExpandListAdapter;
 import com.phone1000.groupproject.bean.CommentListBean;
 import com.phone1000.groupproject.bean.DigtleUrl;
+import com.phone1000.groupproject.customview.CustomExpanbleListView;
 import com.phone1000.groupproject.http.JsonHttpUtils;
 import com.phone1000.groupproject.view.IjsonView;
 
@@ -28,7 +29,7 @@ import butterknife.ButterKnife;
 
 public class TeamNewAritcleActivity extends AppCompatActivity implements IjsonView {
     @BindView(R.id.aritcle_detail_exlist)
-ExpandableListView expandableListView;
+    CustomExpanbleListView  expandableListView;
     @BindView(R.id.team_ariticle_back)
     ImageButton backImage;
     @BindView(R.id.team_ariticle_commend)
