@@ -8,8 +8,8 @@ public class ContentBaseUrl {
             "<html>\n" +
             "<head>\n" +
             "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n" +
-            "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n" +
             "<meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n" +
+            "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=yes\">"+
             "<title></title>\n" +
             "<meta name=\"Generator\" content=\"Cocoa HTML Writer\">\n" +
             "<meta name=\"CocoaVersion\" content=\"1187.34\">\n" +
@@ -29,16 +29,16 @@ public class ContentBaseUrl {
             "    color: #404040;\n" +
             "}\n" +
             "div#v-main a {color:#4b4c4c; }\n" +
-            "div#v-main img{max-width:<!-- device size --> !important;margin-left: -25.5px;display:block;}\n" +
+            "div#v-main img{width:120% ;margin-left: -25.5px;display:block;}\n" +
             "\n" +
             "div#v-titleimage {width:<!-- device size -->; margin:0px auto;background: #fff}\n" +
             "\n" +
             "#v-main font[size=\"5\"]{line-height: 35px}\n" +
             "#v-main font[size=\"6\"]{line-height: 35px}\n" +
             "\n" +
-            "iframe {width:<!-- device size -->;max-width:<!-- device size --> !important; margin-left: -25.5px;}\n" +
-            "img {max-width:<!-- img size --> !important; height:auto !important;}\n" +
-            "    img#titleimage {width:<!-- device size -->; max-width:<!-- device size --> !important;vertical-align: top;display: block;}\n" +
+            "iframe {width:120%;max-width:120% !important; margin-left: -25.5px;}\n" +
+            "img {max-width:120% !important; height:auto !important;}\n" +
+            "    img#titleimage {width:120%; max-width:<!-- device size --> !important;vertical-align: top;display: block;}\n" +
             "    \n" +
             "    div#v-titleblock {width:<!-- device size -->;margin:0 auto; padding-top: 0px;background:#FFFFFF;}\n" +
             "    div.title_separator { height: 20px; padding:0 10px 40px 0; clear: both;text-align: center}\n" +
