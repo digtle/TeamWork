@@ -19,15 +19,15 @@
                     android:id="@+id/line1"
                     android:layout_width="6dp"
                     android:layout_height="match_parent"
-                    android:background="#ff5722"/>
+                    android:background="#3f4247"/>
                 <Button
                     android:id="@+id/button_one"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@id/line1"
-                    android:drawableLeft="@drawable/ic_whatshot_black_24dp"
+                    android:drawableLeft="@drawable/category_flag"
                     android:paddingLeft="20dp"
-                    android:text="热门"
+                    android:text="沙龙"
                     android:background="#ffffff"/>
             </RelativeLayout>
             <RelativeLayout
@@ -42,15 +42,15 @@
                     android:id="@+id/line2"
                     android:layout_width="6dp"
                     android:layout_height="match_parent"
-                    android:background="#cddc39"/>
+                    android:background="#3f4247"/>
                 <Button
                     android:id="@+id/button_two"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@id/line2"
-                    android:drawableLeft="@drawable/category_activity_new"
+                    android:drawableLeft="@drawable/category_rocket"
                     android:paddingLeft="20dp"
-                    android:text="活动"
+                    android:text="玩物"
                     android:background="#ffffff"/>
             </RelativeLayout>
 
@@ -73,39 +73,25 @@
                 android:id="@+id/line3"
                 android:layout_width="6dp"
                 android:layout_height="match_parent"
-                android:background="#469de6"/>
+                android:background="#3f4247"/>
             <Button
                 android:id="@+id/button_three"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@id/line3"
-                android:drawableLeft="@drawable/category_news"
+                android:drawableLeft="@drawable/category_tv"
                 android:paddingLeft="20dp"
-                android:text="资讯"
+                android:text="视频"
                 android:background="#ffffff"/>
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
-            android:background="#ffffff"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp">
-            <TextView
-                android:id="@+id/line4"
-                android:layout_width="6dp"
-                android:layout_height="match_parent"
-                android:background="#69707a"/>
-            <Button
-                android:id="@+id/button_four"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@id/line4"
-                android:drawableLeft="@drawable/ic_devices_other_black_24dp"
-                android:paddingLeft="20dp"
-                android:text="评测"
-                android:background="#ffffff"/>
+
         </RelativeLayout>
 
     </LinearLayout>

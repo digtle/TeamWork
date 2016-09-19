@@ -12,6 +12,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -65,6 +66,36 @@ public class RemenFragmentLeft extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.remen_ftagment_left, container, false);
+        ListView mListView = (ListView) view.findViewById(R.id.list_view);
+        MyAdapter myAdapter = new MyAdapter();
+        mListView.setAdapter(myAdapter);
         return view;
+    }
+
+    class MyAdapter extends BaseAdapter{
+
+        @Override
+        public int getCount() {
+            return 10;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view = convertView;
+            if (view == null){
+                view = LayoutInflater.from(mContext).inflate(R.layout.remen_fragment_left_item,parent,false);
+            }
+            return view;
+        }
     }
 }

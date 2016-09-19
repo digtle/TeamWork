@@ -19,15 +19,16 @@
                     android:id="@+id/line1"
                     android:layout_width="6dp"
                     android:layout_height="match_parent"
-                    android:background="#ff5722"/>
+                    android:background="#3f4247"/>
                 <Button
                     android:id="@+id/button_one"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:onClick="click"
                     android:layout_toRightOf="@id/line1"
-                    android:drawableLeft="@drawable/ic_whatshot_black_24dp"
+                    android:drawableLeft="@drawable/category_phone"
                     android:paddingLeft="20dp"
-                    android:text="热门"
+                    android:text="手机"
                     android:background="#ffffff"/>
             </RelativeLayout>
             <RelativeLayout
@@ -42,15 +43,16 @@
                     android:id="@+id/line2"
                     android:layout_width="6dp"
                     android:layout_height="match_parent"
-                    android:background="#cddc39"/>
+                    android:background="#3f4247"/>
                 <Button
                     android:id="@+id/button_two"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:onClick="click"
                     android:layout_toRightOf="@id/line2"
-                    android:drawableLeft="@drawable/category_activity_new"
+                    android:drawableLeft="@drawable/category_mouse"
                     android:paddingLeft="20dp"
-                    android:text="活动"
+                    android:text="周边"
                     android:background="#ffffff"/>
             </RelativeLayout>
 
@@ -73,15 +75,16 @@
                 android:id="@+id/line3"
                 android:layout_width="6dp"
                 android:layout_height="match_parent"
-                android:background="#469de6"/>
+                android:background="#3f4247"/>
             <Button
                 android:id="@+id/button_three"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="click"
                 android:layout_toRightOf="@id/line3"
-                android:drawableLeft="@drawable/category_news"
+                android:drawableLeft="@drawable/category_ipad"
                 android:paddingLeft="20dp"
-                android:text="资讯"
+                android:text="平板"
                 android:background="#ffffff"/>
         </RelativeLayout>
         <RelativeLayout
@@ -96,15 +99,16 @@
                 android:id="@+id/line4"
                 android:layout_width="6dp"
                 android:layout_height="match_parent"
-                android:background="#69707a"/>
+                android:background="#3f4247"/>
             <Button
                 android:id="@+id/button_four"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="click"
                 android:layout_toRightOf="@id/line4"
-                android:drawableLeft="@drawable/ic_devices_other_black_24dp"
+                android:drawableLeft="@drawable/category_notebook"
                 android:paddingLeft="20dp"
-                android:text="评测"
+                android:text="电脑"
                 android:background="#ffffff"/>
         </RelativeLayout>
 

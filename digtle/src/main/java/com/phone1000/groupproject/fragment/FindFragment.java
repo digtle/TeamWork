@@ -7,6 +7,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -79,6 +81,9 @@ public class FindFragment extends Fragment implements IthirdBannerView,IjsonView
     private GroupGridAdapter gridAdapter;
     private List<HorzotalGroupInfo.NewgroupBean> newgroupBeanList = new ArrayList<>();
     private List<MostnewListInfo>  newlistBeenList = new ArrayList<>();
+
+    private List<Fragment> fragments = new ArrayList<>();
+
     private Handler mHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -89,6 +94,9 @@ public class FindFragment extends Fragment implements IthirdBannerView,IjsonView
 
         }
     };
+    private LinearLayout mLinearLayout;
+    private int childCount;
+
     //重写抽象工厂方法
     public static FindFragment newInstance(){
         FindFragment findFragment = new FindFragment();
@@ -99,6 +107,12 @@ public class FindFragment extends Fragment implements IthirdBannerView,IjsonView
     public void onCreate(@Nullable Bundle savedInstanceState) {
         mContext = getContext();
         super.onCreate(savedInstanceState);
+
+        fragments.add(FragmentOne.newInstance());
+        fragments.add(FragmentTwo.newInstance());
+        fragments.add(FragmentThree.newInstance());
+        fragments.add(FragmentFour.newInstance());
+        fragments.add(FragmentFive.newInstance());
     }
 
     @Nullable
@@ -147,7 +161,34 @@ private int dp2pix(int size){
 
             }
         });
+
+
+        mLinearLayout = (LinearLayout)headerView.findViewById(R.id.find_selector_ll);
         findGroupViewpager = (ViewPager) headerView.findViewById(R.id.find_froup_viewpage);
+        MyFragmentPagerAdapter myAdapter = new MyFragmentPagerAdapter(getChildFragmentManager());
+        findGroupViewpager.setAdapter(myAdapter);
+        childCount = mLinearLayout.getChildCount();
+        controlIndicator(0);
+        findGroupViewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                controlIndicator(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+
+
+
         //获取小组的视图
         groupGridView = (GridView) headerView.findViewById(R.id.horizontal_horizontal_grid);
         layoutParams = new LinearLayout.LayoutParams(dp2pix(1250),dp2pix(240));
@@ -162,6 +203,32 @@ private int dp2pix(int size){
         findBanner.setAdapter(bannerAdapter);
         mHandler.sendEmptyMessage(1);
 
+    }
+    private void controlIndicator(int index) {
+        ImageView view = (ImageView) mLinearLayout.getChildAt(index);
+        //初始化所有的ImageView的enable属性为false
+
+        for (int i = 0; i < childCount; i++) {
+            ImageView childView = (ImageView) mLinearLayout.getChildAt(i);
+            childView.setEnabled(false);
+        }
+        view.setEnabled(true);
+    }
+    class MyFragmentPagerAdapter extends FragmentPagerAdapter{
+
+        public MyFragmentPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return fragments.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return fragments == null ? 0 : fragments.size();
+        }
     }
 
     private void initView() {

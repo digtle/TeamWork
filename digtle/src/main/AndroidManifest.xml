@@ -24,6 +24,7 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".ui.TeamHeadDetailsActivity" />
         <activity android:name=".ui.TeamNewAritcleActivity"/>
+        <activity android:name=".RemenActivity"/>
     </application>
 
 </manifest>

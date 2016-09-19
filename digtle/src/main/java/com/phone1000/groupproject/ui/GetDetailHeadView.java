@@ -1,15 +1,12 @@
 package com.phone1000.groupproject.ui;
 
 import android.content.Context;
-import android.os.Handler;
-import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.phone1000.groupproject.R;
@@ -18,7 +15,6 @@ import com.phone1000.groupproject.bean.TimeForamt;
 import com.phone1000.groupproject.customview.CustomListview;
 import com.phone1000.groupproject.http.JsonHttpUtils;
 import com.phone1000.groupproject.view.IjsonView;
-import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -55,13 +51,7 @@ public class GetDetailHeadView implements IjsonView {
         this.tid = tid;
         this.mContex = mContex;
     }
-   private Handler mHandler = new  Handler(){
-       @Override
-       public void handleMessage(Message msg) {
-           super.handleMessage(msg);
-           imageList.setSelection(ListView.FOCUS_DOWN);
-       }
-   };
+
     private void initDatas() {
         //加载数据
         jsonHttpUtils = JsonHttpUtils.newInstance();
@@ -78,7 +68,7 @@ public class GetDetailHeadView implements IjsonView {
         summaryTv = (TextView) headerView.findViewById(R.id.article_summay);
         timeDataTv = (TextView) headerView.findViewById(R.id.time_data);
         imageList = (CustomListview) headerView.findViewById(R.id.pic_image_list);
-       thumbTv = (TextView) headerView.findViewById(R.id.thumbs_number_tv);
+        thumbTv = (TextView) headerView.findViewById(R.id.thumbs_number_tv);
         imageGrid = (GridView) headerView.findViewById(R.id.logo_grid);
         commentNumber = (TextView) headerView.findViewById(R.id.new_comment_number);
        //设置适配器
@@ -88,7 +78,6 @@ public class GetDetailHeadView implements IjsonView {
        //绑定适配器
        imageGrid.setAdapter(gridAdapter);
        imageList.setAdapter(imageListAdapter);
-
        // 加载数据
         initDatas();
         return  headerView;
@@ -139,8 +128,6 @@ public class GetDetailHeadView implements IjsonView {
             commentNumber.setText(recommends);
             gridAdapter.notifyDataSetChanged();
             imageListAdapter.notifyDataSetChanged();
-            imageList.setSelection(ListView.FOCUS_DOWN);
-//            mHandler.sendEmptyMessageDelayed(0,500);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -201,8 +188,7 @@ public class GetDetailHeadView implements IjsonView {
                     viewHolder = (ViewHolder) view.getTag();
                 }
                 String imageUrl = imageUrlList.get(position);
-                viewHolder.imageView.setImageResource(R.drawable.article_default);
-                Picasso.with(mContex).load(imageUrl).memoryPolicy(MemoryPolicy.NO_STORE).into(viewHolder.imageView);
+                Picasso.with(mContex).load(imageUrl).placeholder(R.drawable.article_default).into(viewHolder.imageView);
                 return view;
             }
             class ViewHolder{

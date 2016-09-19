@@ -3,11 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Team.iml" filepath="$PROJECT_DIR$/Team.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Team.iml" filepath="$PROJECT_DIR$/Team.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/digtle.iml" filepath="$PROJECT_DIR$/digtle.iml" />
       <module fileurl="file://$PROJECT_DIR$/digtle/digtle.iml" filepath="$PROJECT_DIR$/digtle/digtle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/digtle/digtle-digtle.iml" filepath="$PROJECT_DIR$/digtle/digtle-digtle.iml" />
       <module fileurl="file://$PROJECT_DIR$/imageloader/imageloader.iml" filepath="$PROJECT_DIR$/imageloader/imageloader.iml" />
       <module fileurl="file://$PROJECT_DIR$/refreshlibrary/refreshlibrary.iml" filepath="$PROJECT_DIR$/refreshlibrary/refreshlibrary.iml" />
     </modules>
