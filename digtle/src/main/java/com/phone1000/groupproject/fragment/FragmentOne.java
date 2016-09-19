@@ -25,6 +25,7 @@ public class FragmentOne extends Fragment {
         FragmentOne fragmentOne = new FragmentOne();
         return fragmentOne;
     }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
