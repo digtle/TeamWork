@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,7 +77,36 @@ public class MainPageDetailActivity extends AppCompatActivity implements IjsonVi
     private void initHeaderView() {
         headView = LayoutInflater.from(this).inflate(R.layout.main_page_detail_headerview,null,false);
         headerViewInflater = new InflaterHeaderView(headView);
+        WebSettings webSettings = headerViewInflater.detailWeb.getSettings();
+        webSettings.setDisplayZoomControls(false);
+        webSettings.setJavaScriptEnabled(true); // 设置支持javascript脚本
+        webSettings.setAllowFileAccess(true); // 允许访问文件
+        webSettings.setBuiltInZoomControls(true); // 设置显示缩放按钮
+        webSettings.setSupportZoom(true); // 支持缩放
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+        webSettings.setUseWideViewPort(true);//关键点
+        webSettings.setLoadWithOverviewMode(true);
+        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NORMAL);
 
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int mDensity = metrics.densityDpi;
+        Log.d("maomao", "densityDpi = " + mDensity);
+        if (mDensity == 240) {
+            webSettings.setDefaultZoom(WebSettings.ZoomDensity.FAR);
+        } else if (mDensity == 160) {
+            webSettings.setDefaultZoom(WebSettings.ZoomDensity.MEDIUM);
+        } else if(mDensity == 120) {
+            webSettings.setDefaultZoom(WebSettings.ZoomDensity.CLOSE);
+        }else if(mDensity == DisplayMetrics.DENSITY_XHIGH){
+            webSettings.setDefaultZoom(WebSettings.ZoomDensity.FAR);
+        }else if (mDensity == DisplayMetrics.DENSITY_TV){
+            webSettings.setDefaultZoom(WebSettings.ZoomDensity.FAR);
+        }else{
+            webSettings.setDefaultZoom(WebSettings.ZoomDensity.MEDIUM);
+        }
     }
 
     private void loadDats() {
@@ -145,28 +176,34 @@ public class MainPageDetailActivity extends AppCompatActivity implements IjsonVi
                 commentListBeanList.add(commentListBean);
 
             }
-             headerViewInflater.commentNumberTv.setText(commentListBeanList.size()+"");
-             headerViewInflater.checkBtn.setText("查看所有"+commentListBeanList.size()+"条评论");
-             CommentListBean commentListBean1 = commentListBeanList.get(0);
-             headerViewInflater.commnetName1.setText(commentListBean1.getAuthor());
-             headerViewInflater.contentTv1.setText(Html.fromHtml(commentListBean1.getMessage()));
-             String useLogoUrl  = DigtleUrl.getUserLogoUrl(commentListBean1.getAuthorid());
-             Picasso.with(mContext).load(useLogoUrl).placeholder(R.drawable.user_pic_default).into(headerViewInflater.commnetLogo1);
-             headerViewInflater.commentTime1.setText(TimeForamt.dateInfo(commentListBean1.getDateLine()));
+            if(commentListBeanList.size() >=1){
+                headerViewInflater.commentNumberTv.setText(commentListBeanList.size()+"");
+                headerViewInflater.checkBtn.setText("查看所有"+commentListBeanList.size()+"条评论");
+                CommentListBean commentListBean1 = commentListBeanList.get(0);
+                headerViewInflater.commnetName1.setText(commentListBean1.getAuthor());
+                headerViewInflater.contentTv1.setText(Html.fromHtml(commentListBean1.getMessage()));
+                String useLogoUrl  = DigtleUrl.getUserLogoUrl(commentListBean1.getAuthorid());
+                Picasso.with(mContext).load(useLogoUrl).placeholder(R.drawable.user_pic_default).into(headerViewInflater.commnetLogo1);
+                headerViewInflater.commentTime1.setText(TimeForamt.dateInfo(commentListBean1.getDateLine()));
+            }
+         if( commentListBeanList.size() >= 2){
+         CommentListBean commentListBean2 = commentListBeanList.get(1);
+         headerViewInflater.commnetName2.setText(commentListBean2.getAuthor());
+         headerViewInflater.contentTv2.setText(Html.fromHtml(commentListBean2.getMessage()));
+         String useLogoUrl1  = DigtleUrl.getUserLogoUrl(commentListBean2.getAuthorid());
+         Picasso.with(mContext).load(useLogoUrl1).placeholder(R.drawable.user_pic_default).into(headerViewInflater.commnetLogo2);
+         headerViewInflater.commentTime2.setText(TimeForamt.dateInfo(commentListBean2.getDateLine()));
+       }
 
-            CommentListBean commentListBean2 = commentListBeanList.get(1);
-            headerViewInflater.commnetName2.setText(commentListBean2.getAuthor());
-            headerViewInflater.contentTv2.setText(Html.fromHtml(commentListBean2.getMessage()));
-            String useLogoUrl1  = DigtleUrl.getUserLogoUrl(commentListBean2.getAuthorid());
-            Picasso.with(mContext).load(useLogoUrl1).placeholder(R.drawable.user_pic_default).into(headerViewInflater.commnetLogo2);
-            headerViewInflater.commentTime2.setText(TimeForamt.dateInfo(commentListBean2.getDateLine()));
+            if(commentListBeanList.size() >= 3){
+                CommentListBean commentListBean3 = commentListBeanList.get(2);
+                headerViewInflater.commnetName3.setText(commentListBean3.getAuthor());
+                headerViewInflater.contentTv3.setText(Html.fromHtml(commentListBean3.getMessage()));
+                String useLogoUrl2  = DigtleUrl.getUserLogoUrl(commentListBean3.getAuthorid());
+                Picasso.with(mContext).load(useLogoUrl2).placeholder(R.drawable.user_pic_default).into(headerViewInflater.commnetLogo3);
+                headerViewInflater.commentTime3.setText(TimeForamt.dateInfo(commentListBean3.getDateLine()));
+            }
 
-            CommentListBean commentListBean3 = commentListBeanList.get(2);
-            headerViewInflater.commnetName3.setText(commentListBean3.getAuthor());
-            headerViewInflater.contentTv3.setText(Html.fromHtml(commentListBean3.getMessage()));
-            String useLogoUrl2  = DigtleUrl.getUserLogoUrl(commentListBean3.getAuthorid());
-            Picasso.with(mContext).load(useLogoUrl2).placeholder(R.drawable.user_pic_default).into(headerViewInflater.commnetLogo3);
-            headerViewInflater.commentTime3.setText(TimeForamt.dateInfo(commentListBean3.getDateLine()));
 
 
             Iterator<String>  relatedsKeys = relateds.keys();
@@ -182,9 +219,6 @@ public class MainPageDetailActivity extends AppCompatActivity implements IjsonVi
             relatedAdapter.notifyDataSetChanged();;
 
             String detailBaseUrl = ContentBaseUrl.BASE_URL_HEAD+content+ContentBaseUrl.BASE_URL_FOOT;
-            WebSettings settings = headerViewInflater.detailWeb.getSettings();
-            settings.setUseWideViewPort(true);
-            settings.setJavaScriptEnabled(true);
             headerViewInflater.detailWeb.loadDataWithBaseURL(null,detailBaseUrl,"text/html","UTF-8",null);
             progressDialog.dismiss();
         } catch (JSONException e) {
